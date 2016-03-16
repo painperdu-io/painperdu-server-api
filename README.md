@@ -1,1 +1,1 @@
-# painperdu-server-api
+# Painperdu API REST server
