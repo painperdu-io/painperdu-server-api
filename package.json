@@ -15,7 +15,9 @@
     "url": "https://github.com/painperdu-io/painperdu-server-api/issues"
   },
   "scripts": {
-    "start": "npm install"
+    "dev": "gulp build:dev",
+    "prod": "gulp build:prod",
+    "start": "node dist/server/server.js"
   },
   "dependencies": {
     "boom": "^3.1.x",
@@ -25,7 +27,8 @@
     "joi": "^8.0.x",
     "logdown": "^1.2.x",
     "mongoose": "^4.4.x",
-    "nconf": "^0.8.x"
+    "nconf": "^0.8.x",
+    "socket.io": "^1.4.x"
   },
   "devDependencies": {
     "babel-core": "^6.3.x",
