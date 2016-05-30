@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "favorite": true
+    },
+    {
+      "favorite": false
+    },
+    {
+      "favorite": false
+    },
+    {
+      "favorite": true
+    },
+    {
+      "favorite": true
+    },
+    {
+      "favorite": false
+    }
+  ]
+}

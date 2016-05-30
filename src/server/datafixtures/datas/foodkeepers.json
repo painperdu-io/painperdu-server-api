@@ -1,0 +1,52 @@
+{
+  "results": [
+    {
+      "name": "Maison",
+      "description": "Mon appart à moi",
+      "picture": "e4593ae16154e02df6da9bb56729cee3.png",
+      "location": {
+        "street": "7 Avenue de Brogny",
+        "number": "",
+        "apartment": "",
+        "floor": "",
+        "additional": "",
+        "infos": "",
+        "city": "Annecy",
+        "postcode": 74000,
+        "coordinates": [6.123673300000064, 45.9033057]
+      }
+    },
+    {
+      "name": "Maison",
+      "description": "Chez papa et maman",
+      "picture": "00595ccc81d727eddf8aa00cc7e148c9.png",
+      "location": {
+        "street": "4 Avenue de Brogny",
+        "number": "",
+        "apartment": "",
+        "floor": "",
+        "additional": "",
+        "infos": "",
+        "city": "Annecy",
+        "postcode": 74000,
+        "coordinates": [6.126070600000048, 45.90687369999999]
+      }
+    },
+    {
+      "name": "Insign",
+      "description": "Partage boulot",
+      "picture": "3b81018cc0afc74c957e9526083343c7.png",
+      "location": {
+        "street": "13 Avenue de Brogny",
+        "number": "",
+        "apartment": "",
+        "floor": "",
+        "additional": "",
+        "infos": "",
+        "city": "Annecy",
+        "postcode": 74000,
+        "coordinates": [6.122376000000031, 45.9018998]
+      }
+    }
+  ]
+}

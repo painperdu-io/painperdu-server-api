@@ -1,0 +1,61 @@
+{
+  "results": [
+    {
+      "login": {
+        "username": "sophier",
+        "password": "ED970E6FB9FFEA8E62CFCDF3219179C98309645E2423B5DCEF552C6EAB1ADECF",
+        "salt": "YgGDiN9z"
+      },
+      "name": {
+        "first": "sophie",
+        "last": "ruitenbeek"
+      },
+      "email": "sophie.ruitenbeek@domain.tld",
+      "picture": "https://randomuser.me/api/portraits/thumb/women/48.jpg",
+      "profile": {
+        "gender": "female",
+        "birthday": "",
+        "description": ""
+      },
+      "score": 329
+    },
+    {
+      "login": {
+        "username": "thomasp",
+        "password": "84F9A875F83028ABA8707536CC44509024030DA6604B6485425AC1FB43E86EE5",
+        "salt": "3g45dFE3"
+      },
+      "name": {
+        "first": "thomas",
+        "last": "pellier"
+      },
+      "email": "thomas.pellier@domain.tld",
+      "picture": "https://randomuser.me/api/portraits/thumb/men/48.jpg",
+      "profile": {
+        "gender": "male",
+        "birthday": "",
+        "description": ""
+      },
+      "score": 0
+    },
+    {
+      "login": {
+        "username": "tibooo",
+        "password": "7EF3F5663DAE49E3E7827F63B2ECFC7DE433343B46876EB043CED231789D1AB2",
+        "salt": "FeGCffE3"
+      },
+      "name": {
+        "first": "Tibo",
+        "last": "Matis"
+      },
+      "email": "thib@domain.tld",
+      "picture": "https://randomuser.me/api/portraits/thumb/men/2.jpg",
+      "profile": {
+        "gender": "male",
+        "birthday": "",
+        "description": ""
+      },
+      "score": 34
+    }
+  ]
+}

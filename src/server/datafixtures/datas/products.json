@@ -1,0 +1,52 @@
+{
+  "results": [
+    {
+      "icon": "tomate",
+      "name": "Tomate",
+      "description": "Tomates acheté sur le marché d'Annecy-le-Vieux",
+      "type": "raw",
+      "quantity": 5,
+      "dlc": 2
+    },
+    {
+      "icon": "emmental",
+      "name": "Fromage",
+      "description": "Suite à mon départ en vacances, je propose différents fromages",
+      "type": "raw",
+      "quantity": 3,
+      "dlc": 15
+    },
+    {
+      "icon": "croissant",
+      "name": "Croissant",
+      "description": "Croissant acheté ce matin",
+      "type": "raw",
+      "quantity": 1,
+      "dlc": 1
+    },
+    {
+      "icon": "poire",
+      "name": "Poire",
+      "description": "Poires de jardin",
+      "type": "raw",
+      "quantity": 32,
+      "dlc": 20
+    },
+    {
+      "icon": "riz",
+      "name": "Riz à l'italienne",
+      "description": "J'ai préparé un grand plat de riz à l'italienne",
+      "type": "homemade",
+      "quantity": 2,
+      "dlc": 3
+    },
+    {
+      "icon": "poulet",
+      "name": "Dinde",
+      "description": "Reste de dinde",
+      "type": "homemade",
+      "quantity": 1,
+      "dlc": 2
+    }
+  ]
+}
