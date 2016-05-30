@@ -8,9 +8,19 @@ gulp.task('watch', 'Watch all changes in source folder and execute task accordin
     gulp.start('configs:json');
   });
 
-  // serve
+  // configs
+  watch(`${cfg.src}/config/**/*.json`, () => {
+    gulp.start('serve:json');
+  });
+
+  // serve json
+  watch(`${cfg.src}/server/**/*.json`, () => {
+    gulp.start('serve:json');
+  });
+
+  // serve babel
   watch(`${cfg.src}/server/**/*.js`, () => {
-    gulp.start('serve');
+    gulp.start('serve:babel');
   });
 
   // log information
