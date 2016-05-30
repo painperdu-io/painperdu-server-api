@@ -1,6 +1,6 @@
 import Boom from 'Boom';
 import Joi from 'Joi';
-import Foodkeepers from './../models/foodkeepers';
+import Foodkeepers from './../models/Foodkeepers';
 
 // GET: all foodkeepers
 const getAll = {

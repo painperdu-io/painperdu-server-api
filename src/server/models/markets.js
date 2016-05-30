@@ -1,8 +1,20 @@
 import mongoose from 'mongoose';
 
-const marketsSchema = new mongoose.Schema({
-  // id
-  id: { type: String, unique: true, required: true },
+const Schema = mongoose.Schema;
+
+const MarketsSchema = new Schema({
+  favorite: {
+    type: Boolean,
+    required: true,
+  },
+  foodkeeper: {
+    type: Schema.Types.ObjectId,
+    ref: 'foodkeepers',
+  },
+}, {
+  timestamps: {
+    createdAt: 'created_at',
+  },
 });
 
-export default mongoose.model('markets', marketsSchema);
+export default mongoose.model('Markets', MarketsSchema);

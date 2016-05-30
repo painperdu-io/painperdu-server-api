@@ -1,17 +1,17 @@
-import markets from './../controllers/markets';
+import Markets from './../controllers/Markets';
 
 export default [
   // GET
-  { method: 'GET', path: '/markets', config: markets.getAll },
-  { method: 'GET', path: '/markets/{marketId}', config: markets.getMarketById },
+  { method: 'GET', path: '/markets', config: Markets.getAll },
+  { method: 'GET', path: '/markets/{marketId}', config: Markets.getMarketById },
 
   // POST
-  { method: 'POST', path: '/markets', config: markets.create },
+  { method: 'POST', path: '/markets', config: Markets.create },
 
   // PUT
-  { method: 'PUT', path: '/markets/{marketId}', config: markets.updateMarketById },
+  { method: 'PUT', path: '/markets/{marketId}', config: Markets.updateMarketById },
 
   // DELETE
-  { method: 'DELETE', path: '/markets', config: markets.removeAll },
-  { method: 'DELETE', path: '/markets/{marketId}', config: markets.removeMarketById },
+  { method: 'DELETE', path: '/markets', config: Markets.removeAll },
+  { method: 'DELETE', path: '/markets/{marketId}', config: Markets.removeMarketById },
 ];

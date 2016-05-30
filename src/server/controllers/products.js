@@ -1,6 +1,6 @@
 import Boom from 'Boom';
 import Joi from 'Joi';
-import Products from './../models/products';
+import Products from './../models/Products';
 
 // GET: all products
 const getAll = {

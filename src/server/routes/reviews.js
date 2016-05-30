@@ -1,17 +1,17 @@
-import reviews from './../controllers/reviews';
+import Reviews from './../controllers/Reviews';
 
 export default [
   // GET
-  { method: 'GET', path: '/reviews', config: reviews.getAll },
-  { method: 'GET', path: '/reviews/{reviewId}', config: reviews.getReviewById },
+  { method: 'GET', path: '/reviews', config: Reviews.getAll },
+  { method: 'GET', path: '/reviews/{reviewId}', config: Reviews.getReviewById },
 
   // POST
-  { method: 'POST', path: '/reviews', config: reviews.create },
+  { method: 'POST', path: '/reviews', config: Reviews.create },
 
   // PUT
-  { method: 'PUT', path: '/reviews/{reviewId}', config: reviews.updateReviewById },
+  { method: 'PUT', path: '/reviews/{reviewId}', config: Reviews.updateReviewById },
 
   // DELETE
-  { method: 'DELETE', path: '/reviews', config: reviews.removeAll },
-  { method: 'DELETE', path: '/reviews/{reviewId}', config: reviews.removeReviewById },
+  { method: 'DELETE', path: '/reviews', config: Reviews.removeAll },
+  { method: 'DELETE', path: '/reviews/{reviewId}', config: Reviews.removeReviewById },
 ];

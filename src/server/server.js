@@ -1,8 +1,10 @@
 import Hapi from 'hapi';
 import Logdown from 'logdown';
+import io from 'socket.io';
 import db from './db';
 import plugins from './plugins';
 import nconf from './../config';
+import SocketIOServer from './socket/SocketIOServer';
 
 const logger = new Logdown({ prefix: 'server' });
 const HOST = process.env.HOST || nconf.get('server:host');
@@ -16,6 +18,9 @@ server.connection({
   labels: ['api']
 });
 
+// create socket.io server
+const ioserver = new SocketIOServer(io(server.listener));
+
 // connect to mongodb
 db.connect();
 
@@ -25,7 +30,7 @@ server.register(plugins, { routes: { prefix: '/api/v1' } }, (error) => {
     logger.error(error);
   } else {
     server.start(() => {
-      logger.info('Server listening at ' + server.info.uri);
+      logger.info(`Server listening at ${server.info.uri}`);
     });
   }
 });

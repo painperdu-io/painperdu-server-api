@@ -1,26 +1,69 @@
 import mongoose from 'mongoose';
 
-const usersSchema = new mongoose.Schema({
-  // id
-  id: { type: String, unique: true, required: true },
+const Schema = mongoose.Schema;
 
-  // mail
-  mail: { type: String, unique: true, required: true },
-
-  // lastname
-  lastname: { type: String, required: true },
-
-  // firstname
-  firstname: { type: String, required: true },
-
-  // description
-  description: { type: String, required: false },
-
-  // photo
-  photo: { type: String, required: true },
-
-  // status
-  status: { type: Number, required: true },
+const UsersSchema = new Schema({
+  login: {
+    username: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    salt: {
+      type: String,
+      required: true,
+    },
+  },
+  name: {
+    first: {
+      type: String,
+      required: true,
+    },
+    last: {
+      type: String,
+      required: true,
+    },
+  },
+  email: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+  picture: {
+    type: String,
+    required: true,
+  },
+  profile: {
+    gender: {
+      type: String,
+      enum: ['female', 'male'],
+    },
+    birthday: {
+      type: Date,
+    },
+    description: {
+      type: String,
+    },
+  },
+  score: {
+    type: Number,
+    required: true,
+  },
+  foodkeepers: [{
+    type: Schema.Types.ObjectId,
+    ref: 'foodkeepers',
+  }],
+  markets: [{
+    type: Schema.Types.ObjectId,
+    ref: 'markets',
+  }],
+}, {
+  timestamps: {
+    createdAt: 'created_at',
+  },
 });
 
-export default mongoose.model('users', usersSchema);
+export default mongoose.model('Users', UsersSchema);

@@ -1,6 +1,6 @@
 import Boom from 'Boom';
 import Joi from 'Joi';
-import Markets from './../models/markets';
+import Markets from './../models/Markets';
 
 // GET: all markets
 const getAll = {

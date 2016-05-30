@@ -1,6 +1,6 @@
 import Boom from 'Boom';
 import Joi from 'Joi';
-import Reviews from './../models/reviews';
+import Reviews from './../models/Reviews';
 
 // GET: all reviews
 const getAll = {

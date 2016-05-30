@@ -1,6 +1,6 @@
 import Boom from 'Boom';
 import Joi from 'Joi';
-import Users from './../models/users';
+import Users from './../models/Users';
 
 // GET: all users
 const getAll = {

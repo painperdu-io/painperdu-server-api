@@ -1,8 +1,16 @@
 import mongoose from 'mongoose';
 
-const alliancesSchema = new mongoose.Schema({
-  // id
-  id: { type: String, unique: true, required: true },
+const Schema = mongoose.Schema;
+
+const AlliancesSchema = new Schema({
+  status: {
+    type: String,
+    enum: ['current', 'terminated'],
+  },
+}, {
+  timestamps: {
+    createdAt: 'created_at',
+  },
 });
 
-export default mongoose.model('alliances', alliancesSchema);
+export default mongoose.model('Alliances', AlliancesSchema);

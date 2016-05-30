@@ -1,17 +1,17 @@
-import alliances from './../controllers/alliances';
+import Alliances from './../controllers/Alliances';
 
 export default [
   // GET
-  { method: 'GET', path: '/alliances', config: alliances.getAll },
-  { method: 'GET', path: '/alliances/{allianceId}', config: alliances.getAllianceById },
+  { method: 'GET', path: '/alliances', config: Alliances.getAll },
+  { method: 'GET', path: '/alliances/{allianceId}', config: Alliances.getAllianceById },
 
   // POST
-  { method: 'POST', path: '/alliances', config: alliances.create },
+  { method: 'POST', path: '/alliances', config: Alliances.create },
 
   // PUT
-  { method: 'PUT', path: '/alliances/{allianceId}', config: alliances.updateAllianceById },
+  { method: 'PUT', path: '/alliances/{allianceId}', config: Alliances.updateAllianceById },
 
   // DELETE
-  { method: 'DELETE', path: '/alliances', config: alliances.removeAll },
-  { method: 'DELETE', path: '/alliances/{allianceId}', config: alliances.removeAllianceById },
+  { method: 'DELETE', path: '/alliances', config: Alliances.removeAll },
+  { method: 'DELETE', path: '/alliances/{allianceId}', config: Alliances.removeAllianceById },
 ];

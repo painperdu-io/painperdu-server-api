@@ -1,6 +1,6 @@
 import Boom from 'Boom';
 import Joi from 'Joi';
-import Alliances from './../models/alliances';
+import Alliances from './../models/Alliances';
 
 // GET: all alliances
 const getAll = {

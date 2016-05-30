@@ -1,11 +1,23 @@
 import mongoose from 'mongoose';
 
-const reviewsSchema = new mongoose.Schema({
-  // id
-  id: { type: String, unique: true, required: true },
+const Schema = mongoose.Schema;
 
-  // name
-  notation: { type: Number, required: true },
+const ReviewsSchema = new Schema({
+  note: {
+    type: Number,
+    min: 0,
+    max: 5,
+    required: true,
+  },
+  foodkeeper: {
+    type: Schema.Types.ObjectId,
+    ref: 'foodkeepers',
+  },
+  /*alliance: {
+    type: Schema.Types.ObjectId,
+    ref: 'alliances',
+    required: true,
+  },*/
 });
 
-export default mongoose.model('reviews', reviewsSchema);
+export default mongoose.model('Reviews', ReviewsSchema);
