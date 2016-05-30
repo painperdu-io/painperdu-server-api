@@ -5,6 +5,7 @@
     "port": 27017,
     "db": "painperdu",
     "username": "painperdu",
-    "password": "painperdu"
+    "password": "painperdu",
+    "datafixtures": true
   }
 }
