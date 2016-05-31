@@ -5,14 +5,18 @@ import Reviews from './../models/Reviews';
 // GET: all reviews
 const getAll = {
   handler: (request, reply) => {
-    reply('GET: all reviews');
+    Reviews.find()
+      .then(reviews => reply(reviews))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // GET: review by id
 const getReviewById = {
   handler: (request, reply) => {
-    reply('GET: review by id');
+    Reviews.findById(request.params.reviewId)
+      .then(review => reply(review))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
@@ -33,14 +37,18 @@ const updateReviewById = {
 // DELETE: all reviews
 const removeAll = {
   handler: (request, reply) => {
-    reply('DELETE: all reviews');
+    Reviews.remove({})
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // DELETE: review by id
 const removeReviewById = {
   handler: (request, reply) => {
-    reply('DELETE: review by id');
+    Reviews.remove({ _id: request.params.reviewId })
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 

@@ -5,14 +5,18 @@ import Products from './../models/Products';
 // GET: all products
 const getAll = {
   handler: (request, reply) => {
-    reply('GET: all products');
+    Products.find()
+      .then(products => reply(products))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // GET: product by id
 const getProductById = {
   handler: (request, reply) => {
-    reply('GET: product by id');
+    Products.findById(request.params.productId)
+      .then(product => reply(product))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
@@ -33,14 +37,18 @@ const updateProductById = {
 // DELETE: all products
 const removeAll = {
   handler: (request, reply) => {
-    reply('DELETE: all products');
+    Products.remove({})
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // DELETE: product by id
 const removeProductById = {
   handler: (request, reply) => {
-    reply('DELETE: product by id');
+    Products.remove({ _id: request.params.productId })
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 

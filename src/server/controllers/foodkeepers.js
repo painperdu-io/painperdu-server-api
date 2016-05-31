@@ -5,14 +5,18 @@ import Foodkeepers from './../models/Foodkeepers';
 // GET: all foodkeepers
 const getAll = {
   handler: (request, reply) => {
-    reply('GET: all foodkeepers');
+    Foodkeepers.find()
+      .then(foodkeepers => reply(foodkeepers))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // GET: foodkeeper by id
 const getFoodkeeperById = {
   handler: (request, reply) => {
-    reply('GET: foodkeeper by id');
+    Foodkeepers.findById(request.params.foodkeeperId)
+      .then(foodkeeper => reply(foodkeeper))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
@@ -33,14 +37,18 @@ const updateFoodkeeperById = {
 // DELETE: all foodkeepers
 const removeAll = {
   handler: (request, reply) => {
-    reply('DELETE: all foodkeepers');
+    Foodkeepers.remove({})
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // DELETE: foodkeeper by id
 const removeFoodkeeperById = {
   handler: (request, reply) => {
-    reply('DELETE: foodkeeper by id');
+    Foodkeepers.remove({ _id: request.params.foodkeeperId })
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 

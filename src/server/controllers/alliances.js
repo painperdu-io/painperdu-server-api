@@ -5,14 +5,18 @@ import Alliances from './../models/Alliances';
 // GET: all alliances
 const getAll = {
   handler: (request, reply) => {
-    reply('GET: all alliances');
+    Alliances.find()
+      .then(alliances => reply(alliances))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // GET: alliance by id
 const getAllianceById = {
   handler: (request, reply) => {
-    reply('GET: alliance by id');
+    Alliances.findById(request.params.allianceId)
+      .then(alliance => reply(alliance))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
@@ -33,14 +37,18 @@ const updateAllianceById = {
 // DELETE: all alliances
 const removeAll = {
   handler: (request, reply) => {
-    reply('DELETE: all alliances');
+    Alliances.remove({})
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // DELETE: alliance by id
 const removeAllianceById = {
   handler: (request, reply) => {
-    reply('DELETE: alliance by id');
+    Alliances.remove({ _id: request.params.allianceId })
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 

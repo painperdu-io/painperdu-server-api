@@ -5,24 +5,20 @@ import Users from './../models/Users';
 // GET: all users
 const getAll = {
   handler: (request, reply) => {
-    Users.find({}, (error, users) => {
-      if (!error) {
-        return reply(users);
-      }
-      return reply(Boom.badImplementation(error));
-    });
+    Users.find()
+      .select('-login')
+      .then(users => reply(users))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // GET: user by id
 const getUserById = {
   handler: (request, reply) => {
-    Users.find({ 'id': request.params.id }, (error, user) => {
-      if (!error) {
-        return reply(user);
-      }
-      return reply(Boom.badImplementation(error));
-    });
+    Users.findById(request.params.userId)
+      .select('-login')
+      .then(user => reply(user))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
@@ -60,14 +56,18 @@ const updateUserById = {
 // DELETE: all users
 const removeAll = {
   handler: (request, reply) => {
-    reply('DELETE: all users');
+    Users.remove({})
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // DELETE: user by id
 const removeUserById = {
   handler: (request, reply) => {
-    reply('DELETE: user by id');
+    Users.remove({ _id: request.params.userId })
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 

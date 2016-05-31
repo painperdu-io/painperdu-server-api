@@ -5,14 +5,18 @@ import Markets from './../models/Markets';
 // GET: all markets
 const getAll = {
   handler: (request, reply) => {
-    reply('GET: all markets');
+    Markets.find()
+      .then(markets => reply(markets))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // GET: market by id
 const getMarketById = {
   handler: (request, reply) => {
-    reply('GET: market by id');
+    Markets.findById(request.params.marketId)
+      .then(market => reply(market))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
@@ -33,14 +37,18 @@ const updateMarketById = {
 // DELETE: all markets
 const removeAll = {
   handler: (request, reply) => {
-    reply('DELETE: all markets');
+    Markets.remove({})
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // DELETE: market by id
 const removeMarketById = {
   handler: (request, reply) => {
-    reply('DELETE: market by id');
+    Markets.remove({ _id: request.params.marketId })
+      .then(() => reply({ statusCode: 200, message: 'Successfully deleted' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
