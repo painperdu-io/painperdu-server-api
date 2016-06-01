@@ -30,7 +30,18 @@ const create = {
 // PUT: product by id
 const updateProductById = {
   handler: (request, reply) => {
-    reply('PUT: product by id');
+    const update = {
+      icon: request.payload.icon,
+      name: request.payload.name,
+      description: request.payload.description,
+      type: request.payload.type,
+      quantity: request.payload.quantity,
+      dlc: request.payload.dlc,
+    };
+
+    Products.update({ _id: request.params.productId }, { $set: update })
+      .then(() => reply({ statusCode: 200, message: 'Successfully updated' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 

@@ -29,8 +29,19 @@ const create = {
 
 // PUT: review by id
 const updateReviewById = {
+  validate: {
+    payload: {
+      note: Joi.number().integer().min(0).max(5),
+    },
+  },
   handler: (request, reply) => {
-    reply('PUT: review by id');
+    const update = {
+      note: request.payload.note,
+    };
+
+    Reviews.update({ _id: request.params.reviewId }, { $set: update })
+      .then(() => reply({ statusCode: 200, message: 'Successfully updated' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 

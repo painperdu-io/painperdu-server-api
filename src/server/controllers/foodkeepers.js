@@ -30,7 +30,26 @@ const create = {
 // PUT: foodkeeper by id
 const updateFoodkeeperById = {
   handler: (request, reply) => {
-    reply('PUT: foodkeeper by id');
+    const update = {
+      name: request.payload.name,
+      description: request.payload.description,
+      picture: request.payload.picture,
+      location: {
+        street: request.payload.location.street,
+        number: request.payload.location.number,
+        apartment: request.payload.location.apartment,
+        floor: request.payload.location.floor,
+        additional: request.payload.location.additional,
+        infos: request.payload.location.infos,
+        city: request.payload.location.city,
+        postcode: request.payload.location.postcode,
+        coordinates: request.payload.location.coordinates,
+      },
+    };
+
+    Foodkeepers.update({ _id: request.params.foodkeeperId }, { $set: update })
+      .then(() => reply({ statusCode: 200, message: 'Successfully updated' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
