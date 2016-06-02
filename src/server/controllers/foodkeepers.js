@@ -29,6 +29,24 @@ const create = {
 
 // PUT: foodkeeper by id
 const updateFoodkeeperById = {
+  validate: {
+    payload: {
+      name: Joi.string().min(2).max(30),
+      description: Joi.string().min(2).max(100),
+      picture: Joi.string(),
+      location: {
+        street: Joi.string().min(2).max(100),
+        number: Joi.string().min(1).max(4),
+        apartment: Joi.string().min(1).max(4),
+        floor: Joi.number().integer(),
+        additional: Joi.string().min(2).max(100),
+        infos: request.payload.location.infos,
+        city: Joi.string().min(2).max(100),
+        postcode: Joi.string().min(2).max(10),
+        coordinates: [Joi.number(), Joi.number()],
+      },
+    },
+  },
   handler: (request, reply) => {
     const update = {
       name: request.payload.name,
