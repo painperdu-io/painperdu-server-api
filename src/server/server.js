@@ -11,11 +11,19 @@ const HOST = process.env.HOST || nconf.get('server:host');
 const PORT = process.env.PORT || nconf.get('server:port');
 
 // create hapi server
-const server = new Hapi.Server();
+const server = new Hapi.Server({
+  connections: {
+    routes: {
+      cors: {
+        credentials: true,
+      },
+    },
+  },
+});
 server.connection({
   host: HOST,
   port: PORT,
-  labels: ['api']
+  labels: ['api'],
 });
 
 // create socket.io server
