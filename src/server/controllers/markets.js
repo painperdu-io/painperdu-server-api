@@ -29,6 +29,11 @@ const create = {
 
 // PUT: market by id
 const updateMarketById = {
+  validate: {
+    payload: {
+      favorite: Joi.boolean(),
+    },
+  },
   handler: (request, reply) => {
     const update = {
       favorite: request.payload.favorite,

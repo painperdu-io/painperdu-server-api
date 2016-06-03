@@ -29,6 +29,16 @@ const create = {
 
 // PUT: product by id
 const updateProductById = {
+  validate: {
+    payload: {
+      icon: Joi.string(),
+      name: Joi.string().alphanum().min(2).max(50),
+      description: Joi.string().min(3).max(250),
+      type: Joi.string().valid('raw', 'homemade'),
+      quantity: Joi.number().integer().min(1),
+      dlc: Joi.number().integer().min(1),
+    },
+  },
   handler: (request, reply) => {
     const update = {
       icon: request.payload.icon,
