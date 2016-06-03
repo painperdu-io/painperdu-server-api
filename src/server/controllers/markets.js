@@ -30,7 +30,13 @@ const create = {
 // PUT: market by id
 const updateMarketById = {
   handler: (request, reply) => {
-    reply('PUT: market by id');
+    const update = {
+      favorite: request.payload.favorite,
+    };
+
+    Markets.update({ _id: request.params.marketId }, { $set: update })
+      .then(() => reply({ statusCode: 200, message: 'Successfully updated' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 

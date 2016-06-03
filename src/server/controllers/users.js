@@ -48,8 +48,23 @@ const create = {
 
 // PUT: user by id
 const updateUserById = {
+  validate: {
+    payload: {
+      email: Joi.string().email(),
+      picture: Joi.string(),
+      score: Joi.number().integer(),
+    }
+  },
   handler: (request, reply) => {
-    reply('PUT: user by id');
+    const update = {
+      email: request.payload.email,
+      picture: request.payload.picture,
+      score: request.payload.score,
+    };
+
+    Users.update({ _id: request.params.userId }, { $set: update })
+      .then(() => reply({ statusCode: 200, message: 'Successfully updated' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
