@@ -37,6 +37,7 @@ const updateProductById = {
       type: Joi.string().valid('raw', 'homemade'),
       quantity: Joi.number().integer().min(1),
       dlc: Joi.number().integer().min(1),
+      available: Joi.boolean(),
     },
   },
   handler: (request, reply) => {
@@ -47,6 +48,7 @@ const updateProductById = {
       type: request.payload.type,
       quantity: request.payload.quantity,
       dlc: request.payload.dlc,
+      available: request.payload.available,
     };
 
     Products.update({ _id: request.params.productId }, { $set: update })

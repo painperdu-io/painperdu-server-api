@@ -40,7 +40,7 @@ const updateFoodkeeperById = {
         apartment: Joi.string().min(1).max(4),
         floor: Joi.number().integer(),
         additional: Joi.string().min(2).max(100),
-        infos: request.payload.location.infos,
+        infos: Joi.string().min(2).max(100),
         city: Joi.string().min(2).max(100),
         postcode: Joi.string().min(2).max(10),
         coordinates: [Joi.number(), Joi.number()],

@@ -1,21 +1,30 @@
 {
   "results": [
     {
-      "favorite": true
+      "_id": "575302fc5dacbac32540267b",
+      "favorite": true,
+      "foodkeeper": {
+        "_id": "4ed2b809d7446b9a0e000014"
+      }
     },
     {
+      "_id": "575302fc5dacbac32540267c",
       "favorite": false
     },
     {
+      "_id": "575302fc5dacbac32540267d",
       "favorite": false
     },
     {
+      "_id": "575302fc5dacbac32540267e",
       "favorite": true
     },
     {
+      "_id": "575302fc5dacbac32540267f",
       "favorite": true
     },
     {
+      "_id": "575302fc5dacbac325402680",
       "favorite": false
     }
   ]

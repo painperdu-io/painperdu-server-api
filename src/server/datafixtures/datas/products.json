@@ -1,52 +1,64 @@
 {
   "results": [
     {
+      "_id": "575302fc5dacbac325402681",
       "icon": "tomate",
       "name": "Tomate",
       "description": "Tomates acheté sur le marché d'Annecy-le-Vieux",
       "type": "raw",
       "quantity": 5,
-      "dlc": 2
+      "dlc": 2,
+      "available": true
     },
     {
+      "_id": "575302fc5dacbac325402682",
       "icon": "emmental",
       "name": "Fromage",
       "description": "Suite à mon départ en vacances, je propose différents fromages",
       "type": "raw",
       "quantity": 3,
-      "dlc": 15
+      "dlc": 15,
+      "available": false
     },
     {
+      "_id": "575302fc5dacbac325402683",
       "icon": "croissant",
       "name": "Croissant",
       "description": "Croissant acheté ce matin",
       "type": "raw",
       "quantity": 1,
-      "dlc": 1
+      "dlc": 1,
+      "available": true
     },
     {
+      "_id": "575302fc5dacbac325402684",
       "icon": "poire",
       "name": "Poire",
       "description": "Poires de jardin",
       "type": "raw",
       "quantity": 32,
-      "dlc": 20
+      "dlc": 20,
+      "available": true
     },
     {
+      "_id": "575302fc5dacbac325402685",
       "icon": "riz",
       "name": "Riz à l'italienne",
       "description": "J'ai préparé un grand plat de riz à l'italienne",
       "type": "homemade",
       "quantity": 2,
-      "dlc": 3
+      "dlc": 3,
+      "available": false
     },
     {
+      "_id": "575302fc5dacbac325402686",
       "icon": "poulet",
       "name": "Dinde",
       "description": "Reste de dinde",
       "type": "homemade",
       "quantity": 1,
-      "dlc": 2
+      "dlc": 2,
+      "available": true
     }
   ]
 }

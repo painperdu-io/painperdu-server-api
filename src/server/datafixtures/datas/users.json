@@ -1,6 +1,7 @@
 {
   "results": [
     {
+      "_id": "575302fc5dacbac32540268d",
       "login": {
         "username": "sophier",
         "password": "ED970E6FB9FFEA8E62CFCDF3219179C98309645E2423B5DCEF552C6EAB1ADECF",
@@ -20,6 +21,7 @@
       "score": 329
     },
     {
+      "_id": "575302fc5dacbac32540268e",
       "login": {
         "username": "thomasp",
         "password": "84F9A875F83028ABA8707536CC44509024030DA6604B6485425AC1FB43E86EE5",
@@ -39,6 +41,7 @@
       "score": 0
     },
     {
+      "_id": "575302fc5dacbac32540268f",
       "login": {
         "username": "tibooo",
         "password": "7EF3F5663DAE49E3E7827F63B2ECFC7DE433343B46876EB043CED231789D1AB2",

@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const UsersSchema = new Schema({
+  _id: {
+    type: Schema.Types.ObjectId,
+  },
   login: {
     username: {
       type: String,
@@ -54,11 +57,11 @@ const UsersSchema = new Schema({
   },
   foodkeepers: [{
     type: Schema.Types.ObjectId,
-    ref: 'foodkeepers',
+    ref: 'Foodkeepers',
   }],
   markets: [{
     type: Schema.Types.ObjectId,
-    ref: 'markets',
+    ref: 'Markets',
   }],
 }, {
   timestamps: {

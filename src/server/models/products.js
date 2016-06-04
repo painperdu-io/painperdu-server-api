@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const ProductsSchema = new Schema({
+  _id: {
+    type: Schema.Types.ObjectId,
+  },
   icon: {
     type: String,
     required: true,
@@ -26,9 +29,13 @@ const ProductsSchema = new Schema({
     type: Number,
     required: true,
   },
+  available: {
+    type: Boolean,
+    required: true,
+  },
   foodkeepers: {
     type: Schema.Types.ObjectId,
-    ref: 'foodkeepers',
+    ref: 'Foodkeepers',
   },
 }, {
   timestamps: {

@@ -15,6 +15,8 @@ const getAll = {
 const getMarketById = {
   handler: (request, reply) => {
     Markets.findById(request.params.marketId)
+      .populate('foodkeeper', 'name description picture location')
+      .exec()
       .then(market => reply(market))
       .catch(error => reply(Boom.badImplementation(error)));
   },
