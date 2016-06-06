@@ -1,5 +1,6 @@
 import babel from 'gulp-babel';
 import changed from 'gulp-changed';
+import plumber from 'gulp-plumber';
 
 // default task
 gulp.task('serve', 'Copy your datafixtures and build the server.', [
@@ -17,6 +18,8 @@ gulp.task('serve:json', false, () => {
 gulp.task('serve:babel', false, () => {
   return gulp.src(`${cfg.src}/server/**/*.js`)
     .pipe(changed(`${cfg.dist}/server`))
+    .pipe(plumber())
     .pipe(babel(cfg.babel))
+    .on('error', err => console.log(err))
     .pipe(gulp.dest(`${cfg.dist}/server`));
 });

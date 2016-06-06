@@ -30,12 +30,13 @@ const getAccomplicesByUserId = {
   handler: (request, reply) => {
     Users.findById(request.params.userId)
       .select('foodkeepers')
-      .then(foodkeepers => {
-        Users.find({ foodkeepers: foodkeepers.foodkeepers })
+      .exec()
+      .then(foodkeepers =>
+        Users.find({ foodkeepers: { "$in": foodkeepers.foodkeepers }})
           .select('-login')
+          .where({ _id: { "$ne": request.params.userId }})
           .then(users => reply(users))
           .catch(error => reply(Boom.badImplementation(error)))
-      }
       )
       .catch(error => reply(Boom.badImplementation(error)));
   },
@@ -46,6 +47,7 @@ const getUsersByFoodkeeperId = {
   handler: (request, reply) => {
     Users.find({ foodkeepers: request.params.foodkeeperId })
       .select('-login')
+      .where({ _id: { "$ne": request.params.userId }})
       .then(users => reply(users))
       .catch(error => reply(Boom.badImplementation(error)));
   },
