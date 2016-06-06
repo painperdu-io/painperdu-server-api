@@ -4,6 +4,8 @@ export default [
   // GET
   { method: 'GET', path: '/users', config: Users.getAll },
   { method: 'GET', path: '/users/{userId}', config: Users.getUserById },
+  { method: 'GET', path: '/users/{userId}/accomplices', config: Users.getAccomplicesByUserId },
+  { method: 'GET', path: '/users/foodkeeper/{foodkeeperId}', config: Users.getUsersByFoodkeeperId },
 
   // POST
   { method: 'POST', path: '/users', config: Users.create },

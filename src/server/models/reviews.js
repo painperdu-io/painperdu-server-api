@@ -16,11 +16,10 @@ const ReviewsSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Foodkeepers',
   },
-  /*alliance: {
+  alliance: {
     type: Schema.Types.ObjectId,
-    ref: 'alliances',
-    required: true,
-  },*/
+    ref: 'Alliances',
+  },
 });
 
 export default mongoose.model('Reviews', ReviewsSchema);

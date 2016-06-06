@@ -18,7 +18,14 @@
         "birthday": "",
         "description": ""
       },
-      "score": 329
+      "score": 329,
+      "foodkeepers": [
+        { "_id": "4ed2b809d7446b9a0e000014" },
+        { "_id": "575302fc5dacbac325402679" }
+      ],
+      "markets": [
+        { "_id": "575302fc5dacbac32540267b" }
+      ]
     },
     {
       "_id": "575302fc5dacbac32540268e",
@@ -38,7 +45,10 @@
         "birthday": "",
         "description": ""
       },
-      "score": 0
+      "score": 0,
+      "foodkeepers": [
+        { "_id": "4ed2b809d7446b9a0e000014" }
+      ]
     },
     {
       "_id": "575302fc5dacbac32540268f",

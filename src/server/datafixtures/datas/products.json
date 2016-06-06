@@ -8,7 +8,11 @@
       "type": "raw",
       "quantity": 5,
       "dlc": 2,
-      "available": true
+      "available": true,
+      "foodkeepers": [
+        { "_id": "4ed2b809d7446b9a0e000014" },
+        { "_id": "575302fc5dacbac325402679" }
+      ]
     },
     {
       "_id": "575302fc5dacbac325402682",

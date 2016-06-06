@@ -4,6 +4,7 @@ export default [
   // GET
   { method: 'GET', path: '/products', config: Products.getAll },
   { method: 'GET', path: '/products/{productId}', config: Products.getProductById },
+  { method: 'GET', path: '/products/foodkeeper/{foodkeeperId}', config: Products.getProductsByFoodkeeperId },
 
   // POST
   { method: 'POST', path: '/products', config: Products.create },

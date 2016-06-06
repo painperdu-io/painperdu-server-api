@@ -33,10 +33,10 @@ const ProductsSchema = new Schema({
     type: Boolean,
     required: true,
   },
-  foodkeepers: {
-    type: Schema.Types.ObjectId,
-    ref: 'Foodkeepers',
-  },
+  foodkeepers: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Foodkeepers',
+  }]
 }, {
   timestamps: {
     createdAt: 'created_at',

@@ -2,7 +2,10 @@
   "results": [
     {
       "_id": "575302fc5dacbac325402687",
-      "note": 4
+      "note": 4,
+      "foodkeeper": {
+        "_id": "4ed2b809d7446b9a0e000014"
+      }
     },
     {
       "_id": "575302fc5dacbac325402688",

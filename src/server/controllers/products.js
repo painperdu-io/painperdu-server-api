@@ -15,7 +15,18 @@ const getAll = {
 const getProductById = {
   handler: (request, reply) => {
     Products.findById(request.params.productId)
+      .populate('foodkeepers', 'name description picture location')
+      .exec()
       .then(product => reply(product))
+      .catch(error => reply(Boom.badImplementation(error)));
+  },
+};
+
+// GET: users by foodkeeper id
+const getProductsByFoodkeeperId = {
+  handler: (request, reply) => {
+    Products.find({ foodkeepers: request.params.foodkeeperId })
+      .then(products => reply(products))
       .catch(error => reply(Boom.badImplementation(error)));
   },
 };
@@ -78,6 +89,7 @@ const removeProductById = {
 export default {
   getAll,
   getProductById,
+  getProductsByFoodkeeperId,
   create,
   updateProductById,
   removeAll,

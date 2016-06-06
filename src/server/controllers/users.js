@@ -17,7 +17,36 @@ const getUserById = {
   handler: (request, reply) => {
     Users.findById(request.params.userId)
       .select('-login')
+      .populate('markets', 'favorite')
+      .populate('foodkeepers', 'name description picture location')
+      .exec()
       .then(user => reply(user))
+      .catch(error => reply(Boom.badImplementation(error)));
+  },
+};
+
+// GET: accomplices by user id
+const getAccomplicesByUserId = {
+  handler: (request, reply) => {
+    Users.findById(request.params.userId)
+      .select('foodkeepers')
+      .then(foodkeepers => {
+        Users.find({ foodkeepers: foodkeepers.foodkeepers })
+          .select('-login')
+          .then(users => reply(users))
+          .catch(error => reply(Boom.badImplementation(error)))
+      }
+      )
+      .catch(error => reply(Boom.badImplementation(error)));
+  },
+};
+
+// GET: users by foodkeeper id
+const getUsersByFoodkeeperId = {
+  handler: (request, reply) => {
+    Users.find({ foodkeepers: request.params.foodkeeperId })
+      .select('-login')
+      .then(users => reply(users))
       .catch(error => reply(Boom.badImplementation(error)));
   },
 };
@@ -89,6 +118,8 @@ const removeUserById = {
 export default {
   getAll,
   getUserById,
+  getAccomplicesByUserId,
+  getUsersByFoodkeeperId,
   create,
   updateUserById,
   removeAll,
