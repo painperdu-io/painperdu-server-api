@@ -22,7 +22,10 @@
       "type": "raw",
       "quantity": 3,
       "dlc": 15,
-      "available": false
+      "available": false,
+      "foodkeepers": [
+        { "_id": "4ed2b809d7446b9a0e000014" }
+      ]
     },
     {
       "_id": "575302fc5dacbac325402683",
@@ -32,7 +35,10 @@
       "type": "raw",
       "quantity": 1,
       "dlc": 1,
-      "available": true
+      "available": true,
+      "foodkeepers": [
+        { "_id": "575302fc5dacbac325402679" }
+      ]
     },
     {
       "_id": "575302fc5dacbac325402684",

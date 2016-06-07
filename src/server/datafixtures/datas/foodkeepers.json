@@ -19,7 +19,7 @@
     },
     {
       "_id": "575302fc5dacbac325402679",
-      "name": "Maison",
+      "name": "Maison 3",
       "description": "Chez papa et maman",
       "picture": "00595ccc81d727eddf8aa00cc7e148c9.png",
       "location": {
@@ -31,7 +31,7 @@
         "infos": "",
         "city": "Annecy",
         "postcode": 74000,
-        "coordinates": [6.126070600000048, 45.90687369999999]
+        "coordinates": [6.1224659, 45.9027573]
       }
     },
     {
@@ -48,7 +48,7 @@
         "infos": "",
         "city": "Annecy",
         "postcode": 74000,
-        "coordinates": [6.122376000000031, 45.9018998]
+        "coordinates": [4.5969146, 44.7352635]
       }
     }
   ]

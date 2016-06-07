@@ -46,7 +46,10 @@ const FoodkeepersSchema = new Schema({
       type: String,
       required: true,
     },
-    coordinates: [Number], // Longitude - Latitude
+    coordinates: {
+      type: [Number], // Longitude - Latitude
+      index: '2d',
+    },
   },
 }, {
   timestamps: {
