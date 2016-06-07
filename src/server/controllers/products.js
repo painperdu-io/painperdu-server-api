@@ -1,12 +1,44 @@
 import Boom from 'Boom';
 import Joi from 'Joi';
+import moment from 'moment';
 import Products from './../models/Products';
+
+/**
+ * Retourne la liste des produits et
+ * ajoute la notion d'urgence si nécessaire
+ *
+ * @param  {array} products  liste des produits mongodb
+ * @return {array}           liste des produits traitée
+ */
+function getProductList(products) {
+  const now = moment();
+  let response = [];
+
+  for (let i = 0; i < products.length; i++) {
+    let product = products[i].toObject();
+    const life = moment(product.createdAt).add(product.dlc, 'days').diff(now, 'seconds');
+
+    // ajout l'état d'urgence
+    if (life < (24 * 60 * 60)) {
+      product.emergency = true;
+    } else {
+      product.emergency = false;
+    }
+
+    // le produit ne doit pas être périmé
+    if (life > 0) {
+      response.push(product);
+    }
+  }
+
+  return response;
+}
 
 // GET: all products
 const getAll = {
   handler: (request, reply) => {
     Products.find()
-      .then(products => reply(products))
+      .then(products => reply(getProductList(products)))
       .catch(error => reply(Boom.badImplementation(error)));
   },
 };
@@ -26,7 +58,7 @@ const getProductById = {
 const getProductsByFoodkeeperId = {
   handler: (request, reply) => {
     Products.find({ foodkeepers: request.params.foodkeeperId })
-      .then(products => reply(products))
+      .then(products => reply(getProductList(products)))
       .catch(error => reply(Boom.badImplementation(error)));
   },
 };
@@ -94,4 +126,5 @@ export default {
   updateProductById,
   removeAll,
   removeProductById,
+  getProductList,
 };

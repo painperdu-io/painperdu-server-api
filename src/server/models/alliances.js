@@ -11,9 +11,7 @@ const AlliancesSchema = new Schema({
     enum: ['current', 'terminated'],
   },
 }, {
-  timestamps: {
-    createdAt: 'created_at',
-  },
+  timestamps: true,
 });
 
 export default mongoose.model('Alliances', AlliancesSchema);

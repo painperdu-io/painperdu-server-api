@@ -20,6 +20,8 @@ const ReviewsSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Alliances',
   },
+}, {
+  timestamps: true,
 });
 
 export default mongoose.model('Reviews', ReviewsSchema);

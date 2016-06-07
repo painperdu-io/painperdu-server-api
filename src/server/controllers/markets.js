@@ -1,5 +1,6 @@
 import Boom from 'Boom';
 import Joi from 'Joi';
+import ProductsController from './../controllers/Products';
 import Foodkeepers from './../models/Foodkeepers';
 import Markets from './../models/Markets';
 import Products from './../models/Products';
@@ -135,7 +136,9 @@ const getProductsByMarketId = {
     Promise.all([p1, p2])
       .then(values => {
         Products.find({ foodkeepers: { $in: values[0] }}) // liste de foodkeepers
-          .then(products => reply(products))
+          .then(products => {
+            reply(ProductsController.getProductList(products));
+          })
           .catch(error => reply(Boom.badImplementation(error)));
       })
       .catch(err => console.log(err));

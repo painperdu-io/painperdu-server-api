@@ -52,9 +52,7 @@ const FoodkeepersSchema = new Schema({
     },
   },
 }, {
-  timestamps: {
-    createdAt: 'created_at',
-  },
+  timestamps: true,
 });
 
 export default mongoose.model('Foodkeepers', FoodkeepersSchema);

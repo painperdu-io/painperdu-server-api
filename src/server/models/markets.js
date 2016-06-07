@@ -19,9 +19,7 @@ const MarketsSchema = new Schema({
     ref: 'Foodkeepers',
   },
 }, {
-  timestamps: {
-    createdAt: 'created_at',
-  },
+  timestamps: true,
 });
 
 export default mongoose.model('Markets', MarketsSchema);

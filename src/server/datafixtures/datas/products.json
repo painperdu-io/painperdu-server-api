@@ -7,7 +7,7 @@
       "description": "Tomates acheté sur le marché d'Annecy-le-Vieux",
       "type": "raw",
       "quantity": 5,
-      "dlc": 2,
+      "dlc": 1,
       "available": true,
       "foodkeepers": [
         { "_id": "4ed2b809d7446b9a0e000014" },
@@ -47,7 +47,7 @@
       "description": "Poires de jardin",
       "type": "raw",
       "quantity": 32,
-      "dlc": 20,
+      "dlc": 1,
       "available": true,
       "foodkeepers": [
         { "_id": "575302fc5dacbac32540267a" }

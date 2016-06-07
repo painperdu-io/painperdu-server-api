@@ -64,9 +64,7 @@ const UsersSchema = new Schema({
     ref: 'Markets',
   }],
 }, {
-  timestamps: {
-    createdAt: 'created_at',
-  },
+  timestamps: true,
 });
 
 export default mongoose.model('Users', UsersSchema);

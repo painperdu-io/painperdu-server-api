@@ -36,11 +36,9 @@ const ProductsSchema = new Schema({
   foodkeepers: [{
       type: Schema.Types.ObjectId,
       ref: 'Foodkeepers',
-  }]
+  }],
 }, {
-  timestamps: {
-    createdAt: 'created_at',
-  },
+  timestamps: true,
 });
 
 export default mongoose.model('Products', ProductsSchema);
