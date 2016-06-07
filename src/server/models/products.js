@@ -34,9 +34,13 @@ const ProductsSchema = new Schema({
     required: true,
   },
   foodkeepers: [{
-      type: Schema.Types.ObjectId,
-      ref: 'Foodkeepers',
+    type: Schema.Types.ObjectId,
+    ref: 'Foodkeepers',
   }],
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'Users',
+  },
 }, {
   timestamps: true,
 });

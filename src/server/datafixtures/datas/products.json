@@ -51,7 +51,8 @@
       "available": true,
       "foodkeepers": [
         { "_id": "575302fc5dacbac32540267a" }
-      ]
+      ],
+      "author": { "_id": "575302fc5dacbac32540268e" }
     },
     {
       "_id": "575302fc5dacbac325402685",

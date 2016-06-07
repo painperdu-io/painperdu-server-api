@@ -48,6 +48,7 @@ const getProductById = {
   handler: (request, reply) => {
     Products.findById(request.params.productId)
       .populate('foodkeepers', 'name description picture location')
+      .populate('author', 'name picture score')
       .exec()
       .then(product => reply(product))
       .catch(error => reply(Boom.badImplementation(error)));
