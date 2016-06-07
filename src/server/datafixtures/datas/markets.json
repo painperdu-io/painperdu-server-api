@@ -3,7 +3,7 @@
     {
       "_id": "575302fc5dacbac32540267b",
       "favorite": true,
-      "perimeter": 0,
+      "perimeter": 2,
       "foodkeeper": {
         "_id": "4ed2b809d7446b9a0e000014"
       }
@@ -11,30 +11,33 @@
     {
       "_id": "575302fc5dacbac32540267c",
       "favorite": false,
-      "perimeter": 0,
+      "perimeter": 2,
       "foodkeeper": {
         "_id": "575302fc5dacbac325402679"
       }
     },
     {
       "_id": "575302fc5dacbac32540267d",
-      "perimeter": 0,
+      "perimeter": 2,
       "favorite": false
     },
     {
       "_id": "575302fc5dacbac32540267e",
-      "perimeter": 0,
+      "perimeter": 2,
       "favorite": true
     },
     {
       "_id": "575302fc5dacbac32540267f",
-      "perimeter": 0,
+      "perimeter": 2,
       "favorite": true
     },
     {
       "_id": "575302fc5dacbac325402680",
-      "perimeter": 0,
-      "favorite": false
+      "perimeter": 2,
+      "favorite": false,
+      "foodkeeper": {
+        "_id": "575302fc5dacbac32540267a"
+      }
     }
   ]
 }
