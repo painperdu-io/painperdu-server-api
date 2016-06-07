@@ -73,24 +73,16 @@ const getAllyByMarketId = {
       })
       .catch(err => console.log(err));
 
-
-      //.then(market => Promise.resolve(market))
-      //.catch(error => Promise.reject(error));
-
-    //p1.then(data => console.log(data));
-
     // récupère l'identifiant de l'utilisateur
     // qui est accocié à la place du marché
     const p2 = Users.find({ markets: request.params.marketId })
       .select('_id')
-    //   .then(user => reply(user))
-    //   .catch(error => reply(Boom.badImplementation(error)));
+      .catch(err => console.log(err));
 
-    //p2.then(data => console.log(data));
-
+    // effectuer la réponse
     Promise.all([p1, p2])
       .then(values => {
-        Users.find({ foodkeepers: { $in: values[0] }}) // foodkeepers Id
+        Users.find({ foodkeepers: { $in: values[0] }}) // liste de foodkeepers
           .select('-login')
           .where({ _id: { $ne: values[1][0]._id }}) // exclure l'utilisateur lié à la place du marché
           .then(users => reply(users))
@@ -109,44 +101,44 @@ const getProductsByMarketId = {
     // - perimeter
     // - foodkeeper._id
     // - foodkeeper.location.coordinates
-    // Markets.findById(request.params.marketId)
-    //   .select('_id perimeter foodkeeper')
-    //   .populate('foodkeeper', 'location.coordinates')
-    //   .exec()
-    //   .then(market => reply(market))
-    //   .catch(error => reply(Boom.badImplementation(error)));
+    //
+    // puis:
+    // - retourne les id des foodkeepers situé dans
+    // le périmètre défini
+    const p1 = Markets.findById(request.params.marketId)
+      .select('_id perimeter foodkeeper')
+      .populate('foodkeeper', 'location.coordinates')
+      .exec()
+      .then(market => {
+        return Foodkeepers.find()
+          .where({ _id: { $ne: market.foodkeeper._id } }) // ne pas retourner le foodkeeper lié au market
+          .where('location.coordinates')
+          .near({
+            center: market.foodkeeper.location.coordinates,
+            maxDistance: getMaxDistance(market.perimeter),
+            spherical: true,
+          })
+          .select('_id');
+      })
+      .catch(err => console.log(err));
 
     // récupère l'identifiant de l'utilisateur
-    // et retourne ses gardes mangers
-    // qui est accocié à la place du marché
-    // Users.find({ markets: '575302fc5dacbac32540267b' })
-    //   .select('_id foodkeepers')
-    //   .populate('foodkeepers', '_id')
-    //   .exec()
-    //   .then(user => reply(user))
-    //   .catch(error => reply(Boom.badImplementation(error)));
+    // ainsi que ses foodkeepers en fonction
+    // de la place du marché
+    const p2 = Users.find({ markets: request.params.marketId })
+      .select('_id foodkeepers')
+      .populate('foodkeepers', '_id')
+      .exec()
+      .catch(err => console.log(err));
 
-    // retourne tout les foodkeepers disponibles en tant
-    // qu'alliés pour une place de marché
-    // const myCoordinates = [6.123673300000064, 45.9033057];
-    // Foodkeepers.find()
-    //   .select('_id location.coordinates')
-    //   .where({ _id: { "$ne": '4ed2b809d7446b9a0e000014' } }) // ID foodkeeper
-    //   .where('location.coordinates')
-    //   .near({
-    //     center: myCoordinates, // coordonées foodkeeper
-    //     maxDistance: getMaxDistance(1),
-    //     spherical: true,
-    //   })
-    //   .then(foodkeepers => reply(foodkeepers))
-    //   .catch(error => reply(Boom.badImplementation(error)));
-
-    // retourne les produits en fonction
-    // d'une liste de foodkeepers
-    // const foodkeeperList = ['4ed2b809d7446b9a0e000014', '575302fc5dacbac325402679'];
-    // Products.find({ foodkeepers: { "$in": foodkeeperList }}) // ID foodkeepers
-    //   .then(products => reply(products))
-    //   .catch(error => reply(Boom.badImplementation(error)));
+    // effectuer la réponse
+    Promise.all([p1, p2])
+      .then(values => {
+        Products.find({ foodkeepers: { $in: values[0] }}) // liste de foodkeepers
+          .then(products => reply(products))
+          .catch(error => reply(Boom.badImplementation(error)));
+      })
+      .catch(err => console.log(err));
   },
 };
 
