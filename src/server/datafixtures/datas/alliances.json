@@ -1,45 +1,57 @@
 {
   "results": [
     {
+      "_id": "575802f88e306604e517422f",
       "updatedAt": "2016-06-08T10:05:10.181Z",
       "createdAt": "2016-06-08T10:05:10.181Z",
       "status": "terminated",
-      "applicant": {
-        "_id": "575302fc5dacbac32540268d"
-      },
-      "giver": {
-        "_id": "575302fc5dacbac32540268f"
-      },
+      "quantity": 1,
       "product": {
         "_id": "575302fc5dacbac325402681"
+      },
+      "users": {
+        "applicant": {
+          "_id": "575302fc5dacbac32540268d"
+        },
+        "giver": {
+          "_id": "575302fc5dacbac32540268f"
+        }
       }
     },
     {
+      "_id": "575802f88e306604e5174230",
       "updatedAt": "2016-06-07T10:05:10.181Z",
       "createdAt": "2016-06-07T10:05:10.181Z",
       "status": "abandoned",
-      "applicant": {
-        "_id": "575302fc5dacbac32540268d"
-      },
-      "giver": {
-        "_id": "575302fc5dacbac32540268e"
-      },
+      "quantity": 1,
       "product": {
         "_id": "575302fc5dacbac325402682"
+      },
+      "users": {
+        "applicant": {
+          "_id": "575302fc5dacbac32540268d"
+        },
+        "giver": {
+          "_id": "575302fc5dacbac32540268e"
+        }
       }
     },
     {
+      "_id": "575802f88e306604e5174231",
       "updatedAt": "2016-06-08T10:10:10.181Z",
       "createdAt": "2016-06-08T10:05:10.181Z",
       "status": "current",
-      "applicant": {
-        "_id": "575302fc5dacbac32540268f"
-      },
-      "giver": {
-        "_id": "575302fc5dacbac32540268d"
-      },
+      "quantity": 13,
       "product": {
         "_id": "575302fc5dacbac325402684"
+      },
+      "users": {
+        "applicant": {
+          "_id": "575302fc5dacbac32540268f"
+        },
+        "giver": {
+          "_id": "575302fc5dacbac32540268d"
+        }
       }
     }
   ]

@@ -9,18 +9,28 @@ const AlliancesSchema = new Schema({
   status: {
     type: String,
     enum: ['abandoned', 'current', 'terminated'],
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    required: true,
   },
   product: {
     type: Schema.Types.ObjectId,
     ref: 'Products',
+    required: true,
   },
-  applicant: {
-    type: Schema.Types.ObjectId,
-    ref: 'Users',
-  },
-  giver: {
-    type: Schema.Types.ObjectId,
-    ref: 'Users',
+  users: {
+    applicant: {
+      type: Schema.Types.ObjectId,
+      ref: 'Users',
+      required: true,
+    },
+    giver: {
+      type: Schema.Types.ObjectId,
+      ref: 'Users',
+      required: true,
+    },
   },
 }, {
   timestamps: true,
