@@ -4,7 +4,7 @@
       "_id": "4ed2b809d7446b9a0e000014",
       "name": "Maison",
       "description": "Mon appart à moi",
-      "picture": "http://172.28.59.96:5000/foodkeepers/foodkeeper.jpg",
+      "picture": "http://127.0.0.1:5000/foodkeepers/foodkeeper.jpg",
       "location": {
         "street": "7 Avenue de Brogny",
         "number": "",
@@ -21,7 +21,7 @@
       "_id": "575302fc5dacbac325402679",
       "name": "Maison 3",
       "description": "Chez papa et maman",
-      "picture": "http://172.28.59.96:5000/foodkeepers/foodkeeper.jpg",
+      "picture": "http://127.0.0.1:5000/foodkeepers/foodkeeper.jpg",
       "location": {
         "street": "4 Avenue de Brogny",
         "number": "",
@@ -38,7 +38,7 @@
       "_id": "575302fc5dacbac32540267a",
       "name": "Insign",
       "description": "Partage boulot",
-      "picture": "http://172.28.59.96:5000/foodkeepers/foodkeeper.jpg",
+      "picture": "http://127.0.0.1:5000/foodkeepers/foodkeeper.jpg",
       "location": {
         "street": "13 Avenue de Brogny",
         "number": "",
