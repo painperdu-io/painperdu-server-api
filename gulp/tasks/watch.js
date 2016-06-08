@@ -13,11 +13,6 @@ gulp.task('watch', 'Watch all changes in source folder and execute task accordin
     gulp.start('serve:json');
   });
 
-  // upload
-  watch(`${cfg.src}/upload/**/*`, () => {
-    gulp.start('upload');
-  });
-
   // serve json
   watch(`${cfg.src}/server/**/*.json`, () => {
     gulp.start('serve:json');

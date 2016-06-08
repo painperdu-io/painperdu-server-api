@@ -8,7 +8,19 @@ const AlliancesSchema = new Schema({
   },
   status: {
     type: String,
-    enum: ['current', 'terminated'],
+    enum: ['abandoned', 'current', 'terminated'],
+  },
+  product: {
+    type: Schema.Types.ObjectId,
+    ref: 'Products',
+  },
+  applicant: {
+    type: Schema.Types.ObjectId,
+    ref: 'Users',
+  },
+  giver: {
+    type: Schema.Types.ObjectId,
+    ref: 'Users',
   },
 }, {
   timestamps: true,
