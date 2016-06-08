@@ -2,6 +2,33 @@ import Boom from 'Boom';
 import Joi from 'Joi';
 import Alliances from './../models/Alliances';
 
+/**
+ * Rajouter le type pour déterminer si la personne
+ * est le demandeur ou le donneur du produit.
+ *
+ * @param  {array} user       utilisateur courrant
+ * @param  {array} alliances  liste des alliances mongodb
+ * @return {array}            liste des alliances traitées
+ */
+function getUserType(user, alliances) {
+  let response = [];
+
+  for (let i = 0; i < alliances.length; i++) {
+    let alliance = alliances[i].toObject();
+
+    // ajout l'état d'urgence
+    if (user == alliance.giver) {
+      alliance.type = 'giver';
+    } else {
+      alliance.type = 'applicant';
+    }
+
+    response.push(alliance);
+  }
+
+  return response;
+}
+
 // GET: all alliances
 const getAll = {
   handler: (request, reply) => {
@@ -16,6 +43,18 @@ const getAllianceById = {
   handler: (request, reply) => {
     Alliances.findById(request.params.allianceId)
       .then(alliance => reply(alliance))
+      .catch(error => reply(Boom.badImplementation(error)));
+  },
+};
+
+// GET: alliance by user id
+const getAlliancesByUserId = {
+  handler: (request, reply) => {
+    Alliances.find({ $or: [{'applicant': request.params.userId}, {'giver': request.params.userId}] })
+      .sort('-updatedAt')
+      .populate('product')
+      .exec()
+      .then(alliances => reply(getUserType(request.params.userId, alliances)))
       .catch(error => reply(Boom.badImplementation(error)));
   },
 };
@@ -55,6 +94,7 @@ const removeAllianceById = {
 export default {
   getAll,
   getAllianceById,
+  getAlliancesByUserId,
   create,
   updateAllianceById,
   removeAll,

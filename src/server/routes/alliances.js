@@ -4,6 +4,7 @@ export default [
   // GET
   { method: 'GET', path: '/alliances', config: Alliances.getAll },
   { method: 'GET', path: '/alliances/{allianceId}', config: Alliances.getAllianceById },
+  { method: 'GET', path: '/alliances/user/{userId}', config: Alliances.getAlliancesByUserId },
 
   // POST
   { method: 'POST', path: '/alliances', config: Alliances.create },

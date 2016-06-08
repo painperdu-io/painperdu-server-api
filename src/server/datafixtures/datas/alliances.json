@@ -1,7 +1,46 @@
 {
   "results": [
     {
-      "status": "terminated"
+      "updatedAt": "2016-06-08T10:05:10.181Z",
+      "createdAt": "2016-06-08T10:05:10.181Z",
+      "status": "terminated",
+      "applicant": {
+        "_id": "575302fc5dacbac32540268d"
+      },
+      "giver": {
+        "_id": "575302fc5dacbac32540268f"
+      },
+      "product": {
+        "_id": "575302fc5dacbac325402681"
+      }
+    },
+    {
+      "updatedAt": "2016-06-07T10:05:10.181Z",
+      "createdAt": "2016-06-07T10:05:10.181Z",
+      "status": "abandoned",
+      "applicant": {
+        "_id": "575302fc5dacbac32540268d"
+      },
+      "giver": {
+        "_id": "575302fc5dacbac32540268e"
+      },
+      "product": {
+        "_id": "575302fc5dacbac325402682"
+      }
+    },
+    {
+      "updatedAt": "2016-06-08T10:10:10.181Z",
+      "createdAt": "2016-06-08T10:05:10.181Z",
+      "status": "current",
+      "applicant": {
+        "_id": "575302fc5dacbac32540268f"
+      },
+      "giver": {
+        "_id": "575302fc5dacbac32540268d"
+      },
+      "product": {
+        "_id": "575302fc5dacbac325402684"
+      }
     }
   ]
 }

@@ -71,12 +71,12 @@ const getAllyByMarketId = {
             spherical: true,
           })
           .select('_id');
-      })
+      });
 
     // récupère l'identifiant de l'utilisateur
     // qui est accocié à la place du marché
     const p2 = Users.find({ markets: request.params.marketId })
-      .select('_id')
+      .select('_id');
 
     // effectuer la réponse
     Promise.all([p1, p2])

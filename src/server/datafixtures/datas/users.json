@@ -12,7 +12,7 @@
         "last": "ruitenbeek"
       },
       "email": "sophie.ruitenbeek@domain.tld",
-      "picture": "https://randomuser.me/api/portraits/thumb/women/48.jpg",
+      "picture": "https://randomuser.me/api/portraits/women/48.jpg",
       "profile": {
         "gender": "female",
         "birthday": "",
@@ -40,7 +40,7 @@
         "last": "pellier"
       },
       "email": "thomas.pellier@domain.tld",
-      "picture": "https://randomuser.me/api/portraits/thumb/men/48.jpg",
+      "picture": "https://randomuser.me/api/portraits/men/48.jpg",
       "profile": {
         "gender": "male",
         "birthday": "",
@@ -66,7 +66,7 @@
         "last": "Matis"
       },
       "email": "thib@domain.tld",
-      "picture": "https://randomuser.me/api/portraits/thumb/men/2.jpg",
+      "picture": "https://randomuser.me/api/portraits/men/2.jpg",
       "profile": {
         "gender": "male",
         "birthday": "",
