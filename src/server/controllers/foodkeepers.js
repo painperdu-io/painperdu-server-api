@@ -59,8 +59,6 @@ const create = {
         foodkeeper.location.zipcode = request.payload.location.zipcode;
         foodkeeper.location.coordinates = coordinates;
 
-        console.log(request.payload.userId);
-
         // on sauvegarde les données
         foodkeeper.save()
           .then((response) => {
