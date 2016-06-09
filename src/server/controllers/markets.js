@@ -47,7 +47,6 @@ const getMarketById = {
 // GET: ally by market id
 const getAllyByMarketId = {
   handler: (request, reply) => {
-
     // récupère les informations suivante du market
     // - _id
     // - perimeter
@@ -81,9 +80,9 @@ const getAllyByMarketId = {
     // effectuer la réponse
     Promise.all([p1, p2])
       .then(values => {
-        Users.find({ foodkeepers: { $in: values[0] }}) // liste de foodkeepers
+        Users.find({ foodkeepers: { $in: values[0] } }) // liste de foodkeepers
           .select('-login')
-          .where({ _id: { $ne: values[1][0]._id }}) // exclure l'utilisateur lié à la place du marché
+          .where({ _id: { $ne: values[1][0]._id } }) // exclure l'utilisateur lié à la place du marché
           .then(users => reply(users))
           .catch(error => reply(Boom.badImplementation(error)));
       })
@@ -94,50 +93,44 @@ const getAllyByMarketId = {
 // GET: products by market id
 const getProductsByMarketId = {
   handler: (request, reply) => {
-
-    // récupère les informations suivante du market
-    // - _id
-    // - perimeter
-    // - foodkeeper._id
-    // - foodkeeper.location.coordinates
-    //
-    // puis:
-    // - retourne les id des foodkeepers situé dans
-    // le périmètre défini
-    const p1 = Markets.findById(request.params.marketId)
-      .select('_id perimeter foodkeeper')
-      .populate('foodkeeper', 'location.coordinates')
+    // récupère les foodkeepers liés à l'utilisateur
+    Users.find({ markets: request.params.marketId })
+      .select('foodkeepers')
       .exec()
-      .then(market => {
-        return Foodkeepers.find()
-          .where({ _id: { $ne: market.foodkeeper._id } }) // ne pas retourner le foodkeeper lié au market
-          .where('location.coordinates')
-          .near({
-            center: market.foodkeeper.location.coordinates,
-            maxDistance: getMaxDistance(market.perimeter),
-            spherical: true,
+      .then((userFoodkeepers) => {
+        // récupère les informations suivante du market
+        // - _id
+        // - perimeter
+        // - foodkeeper._id
+        // - foodkeeper.location.coordinates
+        //
+        // puis:
+        // - retourne les id des foodkeepers situé dans
+        // le périmètre défini
+        Markets.findById(request.params.marketId)
+          .select('_id perimeter foodkeeper')
+          .populate('foodkeeper', 'location.coordinates')
+          .exec()
+          .then(market => {
+            Foodkeepers.find({ _id: { $nin: userFoodkeepers[0].foodkeepers } })
+              .where('location.coordinates')
+              .near({
+                center: market.foodkeeper.location.coordinates,
+                maxDistance: getMaxDistance(market.perimeter),
+                spherical: true,
+              })
+              .select('_id')
+              .then((foodkeepersList) => {
+                // retourner les produits disponibles
+                Products.find({ foodkeepers: { $in: foodkeepersList } }) // liste de foodkeepers
+                  .then(products => {
+                    reply(ProductsController.getProductList(products));
+                  })
+                  .catch(error => reply(Boom.badImplementation(error)));
+              })
+              .catch(err => console.log(err));
           })
-          .select('_id');
-      })
-      .catch(err => console.log(err));
-
-    // récupère l'identifiant de l'utilisateur
-    // ainsi que ses foodkeepers en fonction
-    // de la place du marché
-    const p2 = Users.find({ markets: request.params.marketId })
-      .select('_id foodkeepers')
-      .populate('foodkeepers', '_id')
-      .exec()
-      .catch(err => console.log(err));
-
-    // effectuer la réponse
-    Promise.all([p1, p2])
-      .then(values => {
-        Products.find({ foodkeepers: { $in: values[0] }}) // liste de foodkeepers
-          .then(products => {
-            reply(ProductsController.getProductList(products));
-          })
-          .catch(error => reply(Boom.badImplementation(error)));
+          .catch(err => console.log(err));
       })
       .catch(err => console.log(err));
   },
@@ -150,7 +143,7 @@ const getMarketsByUserId = {
       .select('markets')
       .exec()
       .then(marketsId =>
-        Markets.find({ _id: { "$in": marketsId.markets }})
+        Markets.find({ _id: { $in: marketsId.markets } })
           .populate('foodkeeper', 'name picture')
           .exec()
           .then(markets => reply(markets))
@@ -163,7 +156,24 @@ const getMarketsByUserId = {
 // POST: create a new market
 const create = {
   handler: (request, reply) => {
-    reply('POST: create a new market');
+    // création d'un foodkeeper
+    const market = new Markets();
+    market.perimeter = request.payload.perimeter;
+    market.foodkeeper = request.payload.foodkeeper;
+    market.userId = request.payload.userId;
+
+    // on sauvegarde les données
+    market.save()
+      .then(response => {
+        // lier la place de marcher à l'utilisateur
+        Users.findByIdAndUpdate(market.userId,
+          { $push: { 'markets': { _id: response._id } } },
+          { safe: true, upsert: true, new: true }
+        )
+        .then(() => reply({ statusCode: 200, message: 'Successfully created' }))
+        .catch(error => reply(Boom.badImplementation(error)));
+      })
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 

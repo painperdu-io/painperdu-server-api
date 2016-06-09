@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const MarketsSchema = new Schema({
   favorite: {
     type: Boolean,
-    required: true,
+    default: false,
   },
   perimeter: {
     type: Number,
