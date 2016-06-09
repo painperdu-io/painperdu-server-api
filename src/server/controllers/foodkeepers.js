@@ -24,18 +24,6 @@ const getFoodkeeperById = {
 
 // POST: create a new foodkeeper
 const create = {
-  /*validate: {
-    payload: {
-      name: Joi.string().min(2).max(30),
-      description: Joi.string().min(2).max(100),
-      picture: Joi.string(),
-      location: {
-        street: Joi.string().min(2).max(100),
-        city: Joi.string().min(2).max(100),
-        zipcode: Joi.string().min(2).max(10),
-      },
-    },
-  },*/
   handler: (request, reply) => {
     // récupérer la latitude et longitude
     geocoding.geocode(`${request.payload.location.street}, ${request.payload.location.city}, France`, (err, location) => {
