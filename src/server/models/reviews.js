@@ -3,9 +3,6 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const ReviewsSchema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
-  },
   note: {
     type: Number,
     min: 0,

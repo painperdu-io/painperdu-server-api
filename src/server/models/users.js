@@ -3,9 +3,6 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const UsersSchema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
-  },
   login: {
     username: {
       type: String,

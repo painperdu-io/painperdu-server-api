@@ -3,9 +3,6 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const AlliancesSchema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
-  },
   status: {
     type: String,
     enum: ['abandoned', 'current', 'terminated'],
@@ -32,6 +29,40 @@ const AlliancesSchema = new Schema({
       required: true,
     },
   },
+  steps: [
+    {
+      createAt: {
+        type: Date,
+      },
+      user: {
+        type: String,
+        enum: ['applicant', 'giver'],
+      },
+      type: {
+        type: String,
+        enum: ['DEMANDE', 'ECHANGE'],
+      },
+      status: {
+        read: {
+          type: Boolean,
+          default: false,
+        },
+        completed: {
+          type: Boolean,
+          default: false,
+        },
+      },
+      datas: {
+        response: {
+          type: Boolean,
+          default: false,
+        },
+        date: {
+          type: Date,
+        },
+      },
+    },
+  ],
 }, {
   timestamps: true,
 });
