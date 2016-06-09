@@ -13,7 +13,7 @@
         "additional": "",
         "infos": "",
         "city": "Annecy",
-        "postcode": 74000,
+        "zipcode": 74000,
         "coordinates": [6.123673300000064, 45.9033057]
       }
     },
@@ -30,7 +30,7 @@
         "additional": "",
         "infos": "",
         "city": "Annecy",
-        "postcode": 74000,
+        "zipcode": 74000,
         "coordinates": [4.5969146, 44.7352635]
       }
     },
@@ -47,7 +47,7 @@
         "additional": "",
         "infos": "",
         "city": "Annecy",
-        "postcode": 74000,
+        "zipcode": 74000,
         "coordinates": [6.1224659, 45.9027573]
       }
     }

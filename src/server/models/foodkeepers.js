@@ -3,9 +3,6 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const FoodkeepersSchema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
-  },
   name: {
     type: String,
     required: true,
@@ -16,7 +13,6 @@ const FoodkeepersSchema = new Schema({
   },
   picture: {
     type: String,
-    required: true,
   },
   location: {
     street: {
@@ -42,7 +38,7 @@ const FoodkeepersSchema = new Schema({
       type: String,
       required: true,
     },
-    postcode: {
+    zipcode: {
       type: String,
       required: true,
     },
