@@ -28,7 +28,7 @@ const ProductsSchema = new Schema({
   },
   available: {
     type: Boolean,
-    required: true,
+    default: true,
   },
   foodkeepers: [{
     type: Schema.Types.ObjectId,

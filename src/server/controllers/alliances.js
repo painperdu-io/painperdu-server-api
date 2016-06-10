@@ -1,5 +1,6 @@
 import Boom from 'Boom';
 import Joi from 'Joi';
+import moment from 'moment';
 import Alliances from './../models/Alliances';
 
 /**
@@ -98,14 +99,58 @@ const getAllianceByIdWithUserId = {
 // POST: create a new alliance
 const create = {
   handler: (request, reply) => {
-    reply('POST: create a new alliance');
+    // récupération de la date et heure
+    const now = moment();
+
+    // création d'une alliance
+    const alliance = new Alliances();
+    alliance.quantity = request.payload.quantity;
+    alliance.product = request.payload.product;
+    alliance.users.applicant = request.payload.users.applicant;
+    alliance.users.giver = request.payload.users.giver;
+    alliance.read.applicant = new Date();
+    alliance.read.giver = new Date();
+    alliance.request.completed = true;
+    alliance.request.delayed = request.payload.delayed;
+    if (request.payload.delayed) {
+      alliance.request.date = request.payload.datas.date;
+      alliance.request.timeStart = request.payload.datas.timeStart;
+      alliance.request.timeEnd = request.payload.datas.timeEnd;
+    } else {
+      alliance.request.date = now.format('YYYY-MM-DD');
+      alliance.request.timeStart = now.format('hh:mm');
+      alliance.request.timeEnd = now.add(1, 'hours').format('hh:mm');
+    }
+
+    // on sauvegarde les données
+    alliance.save()
+      .then(() => reply({ statusCode: 200, message: 'Successfully created' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
 // PUT: alliance by id
 const updateAllianceById = {
   handler: (request, reply) => {
-    reply('PUT: alliance by id');
+    reply('UPDATE alliance');
+  },
+};
+
+// PUT: read applicant
+const updateAllianceReadApplicantById = {
+  handler: (request, reply) => {
+    Alliances.update({ _id: request.params.allianceId }, { $set: { 'read.applicant': new Date() } })
+      .then(() => reply({ statusCode: 200, message: 'Successfully updated' }))
+      .catch(error => reply(Boom.badImplementation(error)));
+  },
+};
+
+// PUT: read giver
+const updateAllianceReadGiverById = {
+  handler: (request, reply) => {
+    Alliances.update({ _id: request.params.allianceId }, { $set: { 'read.giver': new Date() } })
+      .then(() => reply({ statusCode: 200, message: 'Successfully updated' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
@@ -134,6 +179,8 @@ export default {
   getAllianceByIdWithUserId,
   create,
   updateAllianceById,
+  updateAllianceReadApplicantById,
+  updateAllianceReadGiverById,
   removeAll,
   removeAllianceById,
 };

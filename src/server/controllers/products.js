@@ -67,7 +67,20 @@ const getProductsByFoodkeeperId = {
 // POST: create a new product
 const create = {
   handler: (request, reply) => {
-    reply('POST: create a new product');
+    // création d'un produit
+    const product = new Products();
+    product.icon = request.payload.icon;
+    product.name = request.payload.name;
+    product.description = request.payload.description;
+    product.type = request.payload.type;
+    product.dlc = request.payload.dlc;
+    product.quantity = request.payload.quantity;
+    product.foodkeepers = request.payload.foodkeepers;
+
+    // on sauvegarde les données
+    product.save()
+      .then(() => reply({ statusCode: 200, message: 'Successfully created' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 

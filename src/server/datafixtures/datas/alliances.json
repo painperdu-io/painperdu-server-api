@@ -16,6 +16,16 @@
         "giver": {
           "_id": "575302fc5dacbac32540268f"
         }
+      },
+      "read": {
+        "applicant": "2016-06-08T10:05:10.181Z",
+        "giver": "2016-06-08T10:05:10.181Z"
+      },
+      "request": {
+        "delayed": false,
+        "date": "2016-06-10",
+        "timeStart": "10:00",
+        "timeEnd": "11:00"
       }
     },
     {
@@ -34,6 +44,16 @@
         "giver": {
           "_id": "575302fc5dacbac32540268e"
         }
+      },
+      "read": {
+        "applicant": "2016-06-08T10:05:10.181Z",
+        "giver": "2016-06-08T10:05:10.181Z"
+      },
+      "request": {
+        "delayed": false,
+        "date": "2016-06-10",
+        "timeStart": "10:00",
+        "timeEnd": "11:00"
       }
     },
     {
@@ -52,6 +72,16 @@
         "giver": {
           "_id": "575302fc5dacbac32540268d"
         }
+      },
+      "read": {
+        "applicant": "2016-06-08T10:05:10.181Z",
+        "giver": "2016-06-08T10:05:10.181Z"
+      },
+      "request": {
+        "delayed": false,
+        "date": "2016-06-10",
+        "timeStart": "10:00",
+        "timeEnd": "11:00"
       }
     }
   ]

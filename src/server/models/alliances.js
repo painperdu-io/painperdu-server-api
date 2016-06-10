@@ -6,7 +6,7 @@ const AlliancesSchema = new Schema({
   status: {
     type: String,
     enum: ['abandoned', 'current', 'terminated'],
-    required: true,
+    default: 'current',
   },
   quantity: {
     type: Number,
@@ -16,6 +16,16 @@ const AlliancesSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Products',
     required: true,
+  },
+  read: {
+    applicant: {
+      type: Date,
+      required: true,
+    },
+    giver: {
+      type: Date,
+      required: true,
+    },
   },
   users: {
     applicant: {
@@ -29,40 +39,50 @@ const AlliancesSchema = new Schema({
       required: true,
     },
   },
-  steps: [
-    {
-      createAt: {
-        type: Date,
-      },
-      user: {
-        type: String,
-        enum: ['applicant', 'giver'],
-      },
-      type: {
-        type: String,
-        enum: ['DEMANDE', 'ECHANGE'],
-      },
-      status: {
-        read: {
-          type: Boolean,
-          default: false,
-        },
-        completed: {
-          type: Boolean,
-          default: false,
-        },
-      },
-      datas: {
-        response: {
-          type: Boolean,
-          default: false,
-        },
-        date: {
-          type: Date,
-        },
-      },
+  request: {
+    completed: {
+      type: Boolean,
+      default: false,
     },
-  ],
+    delayed: {
+      type: Boolean,
+      default: false,
+    },
+    date: {
+      type: String,
+      required: true,
+    },
+    timeStart: {
+      type: String,
+      required: true,
+    },
+    timeEnd: {
+      type: String,
+      required: true,
+    },
+  },
+  availability: {
+    completed: {
+      type: Boolean,
+      default: false,
+    },
+    accepted: {
+      type: Boolean,
+    },
+    date: {
+      type: String,
+    },
+    timeStart: {
+      type: String,
+    },
+    timeEnd: {
+      type: String,
+    },
+  },
+  exchange: {
+    type: Boolean,
+    default: false,
+  },
 }, {
   timestamps: true,
 });
