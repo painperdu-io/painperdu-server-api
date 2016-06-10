@@ -132,7 +132,9 @@ const create = {
 // PUT: alliance by id
 const updateAllianceById = {
   handler: (request, reply) => {
-    reply('UPDATE alliance');
+    Alliances.update({ _id: request.params.allianceId }, { $set: request.payload })
+      .then(() => reply({ statusCode: 200, message: 'Successfully updated' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 
