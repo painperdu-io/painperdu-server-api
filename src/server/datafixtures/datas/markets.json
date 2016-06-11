@@ -3,9 +3,9 @@
     {
       "_id": "575302fc5dacbac32540267b",
       "favorite": true,
-      "perimeter": 2,
+      "perimeter": 0,
       "foodkeeper": {
-        "_id": "4ed2b809d7446b9a0e000014"
+        "_id": "575c41279675c3f0bb344f70"
       }
     },
     {
@@ -13,30 +13,15 @@
       "favorite": false,
       "perimeter": 2,
       "foodkeeper": {
-        "_id": "575302fc5dacbac325402679"
+        "_id": "575c41279675c3f0bb344f77"
       }
     },
     {
       "_id": "575302fc5dacbac32540267d",
-      "perimeter": 2,
-      "favorite": false
-    },
-    {
-      "_id": "575302fc5dacbac32540267e",
-      "perimeter": 2,
-      "favorite": true
-    },
-    {
-      "_id": "575302fc5dacbac32540267f",
-      "perimeter": 2,
-      "favorite": true
-    },
-    {
-      "_id": "575302fc5dacbac325402680",
-      "perimeter": 2,
       "favorite": false,
+      "perimeter": 1,
       "foodkeeper": {
-        "_id": "575302fc5dacbac32540267a"
+        "_id": "575c41279675c3f0bb344f71"
       }
     }
   ]

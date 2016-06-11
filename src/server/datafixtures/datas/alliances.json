@@ -1,20 +1,100 @@
 {
   "results": [
     {
-      "_id": "575802f88e306604e517422f",
+      "_id": "575c63759997b486c3121d43",
+      "updatedAt": "2016-06-08T10:05:10.181Z",
+      "createdAt": "2016-06-08T10:05:10.181Z",
+      "status": "terminated",
+      "quantity": 3,
+      "product": {
+        "_id": "575c540ddeaf339abf1a7471"
+      },
+      "users": {
+        "applicant": {
+          "_id": "575c371b489e38aeb9cd4d26"
+        },
+        "giver": {
+          "_id": "575c371b489e38aeb9cd4d24"
+        }
+      },
+      "read": {
+        "applicant": "2016-06-08T10:05:10.181Z",
+        "giver": "2016-06-08T10:05:10.181Z"
+      },
+      "request": {
+        "completed": true,
+        "delayed": false,
+        "date": "2016-06-08",
+        "timeStart": "10:05",
+        "timeEnd": "11:05"
+      },
+      "availability": {
+        "completed": true,
+        "giver": true,
+        "applicant": false,
+        "date": "",
+        "timeStart": "",
+        "timeEnd": ""
+      },
+      "exchange": {
+        "type": true
+      }
+    },
+    {
+      "_id": "575c63759997b486c3121d44",
+      "updatedAt": "2016-06-08T10:05:10.181Z",
+      "createdAt": "2016-06-08T10:05:10.181Z",
+      "status": "terminated",
+      "quantity": 2,
+      "product": {
+        "_id": "575c540ddeaf339abf1a7490"
+      },
+      "users": {
+        "applicant": {
+          "_id": "575c371b489e38aeb9cd4d26"
+        },
+        "giver": {
+          "_id": "575c371b489e38aeb9cd4d24"
+        }
+      },
+      "read": {
+        "applicant": "2016-06-08T10:05:10.181Z",
+        "giver": "2016-06-08T10:05:10.181Z"
+      },
+      "request": {
+        "completed": true,
+        "delayed": false,
+        "date": "2016-06-08",
+        "timeStart": "10:05",
+        "timeEnd": "11:05"
+      },
+      "availability": {
+        "completed": true,
+        "giver": true,
+        "applicant": false,
+        "date": "",
+        "timeStart": "",
+        "timeEnd": ""
+      },
+      "exchange": {
+        "type": true
+      }
+    },
+    {
+      "_id": "575c63759997b486c3121d45",
       "updatedAt": "2016-06-08T10:05:10.181Z",
       "createdAt": "2016-06-08T10:05:10.181Z",
       "status": "terminated",
       "quantity": 1,
       "product": {
-        "_id": "575302fc5dacbac325402681"
+        "_id": "575c540ddeaf339abf1a7477"
       },
       "users": {
         "applicant": {
-          "_id": "575302fc5dacbac32540268d"
+          "_id": "575c371b489e38aeb9cd4d24"
         },
         "giver": {
-          "_id": "575302fc5dacbac32540268f"
+          "_id": "575c371b489e38aeb9cd4d2e"
         }
       },
       "read": {
@@ -22,55 +102,39 @@
         "giver": "2016-06-08T10:05:10.181Z"
       },
       "request": {
+        "completed": true,
         "delayed": false,
-        "date": "2016-06-10",
-        "timeStart": "10:00",
-        "timeEnd": "11:00"
+        "date": "2016-06-08",
+        "timeStart": "10:05",
+        "timeEnd": "11:05"
+      },
+      "availability": {
+        "completed": true,
+        "giver": true,
+        "applicant": false,
+        "date": "",
+        "timeStart": "",
+        "timeEnd": ""
+      },
+      "exchange": {
+        "type": true
       }
     },
     {
-      "_id": "575802f88e306604e5174230",
-      "updatedAt": "2016-06-07T10:05:10.181Z",
-      "createdAt": "2016-06-07T10:05:10.181Z",
-      "status": "abandoned",
-      "quantity": 1,
-      "product": {
-        "_id": "575302fc5dacbac325402682"
-      },
-      "users": {
-        "applicant": {
-          "_id": "575302fc5dacbac32540268d"
-        },
-        "giver": {
-          "_id": "575302fc5dacbac32540268e"
-        }
-      },
-      "read": {
-        "applicant": "2016-06-08T10:05:10.181Z",
-        "giver": "2016-06-08T10:05:10.181Z"
-      },
-      "request": {
-        "delayed": false,
-        "date": "2016-06-10",
-        "timeStart": "10:00",
-        "timeEnd": "11:00"
-      }
-    },
-    {
-      "_id": "575802f88e306604e5174231",
-      "updatedAt": "2016-06-08T10:10:10.181Z",
+      "_id": "575c63759997b486c3121d46",
+      "updatedAt": "2016-06-08T10:05:10.181Z",
       "createdAt": "2016-06-08T10:05:10.181Z",
-      "status": "current",
-      "quantity": 13,
+      "status": "terminated",
+      "quantity": 2,
       "product": {
-        "_id": "575302fc5dacbac325402684"
+        "_id": "575c540ddeaf339abf1a7479"
       },
       "users": {
         "applicant": {
-          "_id": "575302fc5dacbac32540268f"
+          "_id": "575c371b489e38aeb9cd4d24"
         },
         "giver": {
-          "_id": "575302fc5dacbac32540268d"
+          "_id": "575c371b489e38aeb9cd4d30"
         }
       },
       "read": {
@@ -78,10 +142,142 @@
         "giver": "2016-06-08T10:05:10.181Z"
       },
       "request": {
+        "completed": true,
         "delayed": false,
-        "date": "2016-06-10",
-        "timeStart": "10:00",
-        "timeEnd": "11:00"
+        "date": "2016-06-08",
+        "timeStart": "10:05",
+        "timeEnd": "11:05"
+      },
+      "availability": {
+        "completed": true,
+        "giver": true,
+        "applicant": false,
+        "date": "",
+        "timeStart": "",
+        "timeEnd": ""
+      },
+      "exchange": {
+        "type": true
+      }
+    },
+    {
+      "_id": "575c63759997b486c3121d47",
+      "updatedAt": "2016-06-08T10:05:10.181Z",
+      "createdAt": "2016-06-08T10:05:10.181Z",
+      "status": "abandoned",
+      "quantity": 5,
+      "product": {
+        "_id": "575c540ddeaf339abf1a7473"
+      },
+      "users": {
+        "applicant": {
+          "_id": "575c371b489e38aeb9cd4d24"
+        },
+        "giver": {
+          "_id": "575c371b489e38aeb9cd4d2a"
+        }
+      },
+      "read": {
+        "applicant": "2016-06-08T10:05:10.181Z",
+        "giver": "2016-06-08T10:05:10.181Z"
+      },
+      "request": {
+        "completed": true,
+        "delayed": false,
+        "date": "2016-06-08",
+        "timeStart": "10:05",
+        "timeEnd": "11:05"
+      },
+      "availability": {
+        "completed": true,
+        "giver": true,
+        "applicant": false,
+        "date": "",
+        "timeStart": "",
+        "timeEnd": ""
+      },
+      "exchange": {
+        "type": true
+      }
+    },
+    {
+      "_id": "575c63759997b486c3121d48",
+      "updatedAt": "2016-06-08T10:05:10.181Z",
+      "createdAt": "2016-06-08T10:05:10.181Z",
+      "status": "terminated",
+      "quantity": 3,
+      "product": {
+        "_id": "575c540ddeaf339abf1a7472"
+      },
+      "users": {
+        "applicant": {
+          "_id": "575c371b489e38aeb9cd4d26"
+        },
+        "giver": {
+          "_id": "575c371b489e38aeb9cd4d29"
+        }
+      },
+      "read": {
+        "applicant": "2016-06-08T10:05:10.181Z",
+        "giver": "2016-06-08T10:05:10.181Z"
+      },
+      "request": {
+        "completed": true,
+        "delayed": false,
+        "date": "2016-06-08",
+        "timeStart": "10:05",
+        "timeEnd": "11:05"
+      },
+      "availability": {
+        "completed": true,
+        "giver": true,
+        "applicant": false,
+        "date": "",
+        "timeStart": "",
+        "timeEnd": ""
+      },
+      "exchange": {
+        "type": true
+      }
+    },
+    {
+      "_id": "575c63759997b486c3121d49",
+      "updatedAt": "2016-06-08T10:05:10.181Z",
+      "createdAt": "2016-06-08T10:05:10.181Z",
+      "status": "abandoned",
+      "quantity": 2,
+      "product": {
+        "_id": "575c540ddeaf339abf1a7474"
+      },
+      "users": {
+        "applicant": {
+          "_id": "575c371b489e38aeb9cd4d26"
+        },
+        "giver": {
+          "_id": "575c371b489e38aeb9cd4d2b"
+        }
+      },
+      "read": {
+        "applicant": "2016-06-08T10:05:10.181Z",
+        "giver": "2016-06-08T10:05:10.181Z"
+      },
+      "request": {
+        "completed": true,
+        "delayed": false,
+        "date": "2016-06-08",
+        "timeStart": "10:05",
+        "timeEnd": "11:05"
+      },
+      "availability": {
+        "completed": true,
+        "giver": true,
+        "applicant": false,
+        "date": "",
+        "timeStart": "",
+        "timeEnd": ""
+      },
+      "exchange": {
+        "type": true
       }
     }
   ]
