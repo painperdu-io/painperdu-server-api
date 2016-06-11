@@ -23,7 +23,15 @@ const getReviewById = {
 // POST: create a new review
 const create = {
   handler: (request, reply) => {
-    reply('POST: create a new review');
+    // création d'une alliance
+    const review = new Reviews();
+    review.note = request.payload.note;
+    review.foodkeeper = request.payload.foodkeeper;
+
+    // on sauvegarde les données
+    review.save()
+      .then(() => reply({ statusCode: 200, message: 'Successfully created' }))
+      .catch(error => reply(Boom.badImplementation(error)));
   },
 };
 

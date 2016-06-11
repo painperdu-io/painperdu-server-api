@@ -138,6 +138,16 @@ const updateAllianceById = {
   },
 };
 
+// PUT: applicant accepted by id
+const updateAllianceApplicantAcceptedById = {
+  handler: (request, reply) => {
+    console.log(request.payload);
+    Alliances.update({ _id: request.params.allianceId }, { $set: { 'availability.applicant': true } })
+      .then(() => reply({ statusCode: 200, message: 'Successfully updated' }))
+      .catch(error => reply(Boom.badImplementation(error)));
+  },
+};
+
 // PUT: read applicant
 const updateAllianceReadApplicantById = {
   handler: (request, reply) => {
@@ -183,6 +193,7 @@ export default {
   updateAllianceById,
   updateAllianceReadApplicantById,
   updateAllianceReadGiverById,
+  updateAllianceApplicantAcceptedById,
   removeAll,
   removeAllianceById,
 };

@@ -59,6 +59,7 @@ const getProductById = {
 const getProductsByFoodkeeperId = {
   handler: (request, reply) => {
     Products.find({ foodkeepers: request.params.foodkeeperId })
+      .where('quantity').gt(0)
       .then(products => reply(getProductList(products)))
       .catch(error => reply(Boom.badImplementation(error)));
   },
@@ -80,6 +81,15 @@ const create = {
     // on sauvegarde les données
     product.save()
       .then(() => reply({ statusCode: 200, message: 'Successfully created' }))
+      .catch(error => reply(Boom.badImplementation(error)));
+  },
+};
+
+// PUT: product quantity by id
+const updateProductQuantityById = {
+  handler: (request, reply) => {
+    Products.update({ _id: request.params.productId }, { $inc: { 'quantity': -request.payload.quantity } })
+      .then(() => reply({ statusCode: 200, message: 'Successfully updated' }))
       .catch(error => reply(Boom.badImplementation(error)));
   },
 };
@@ -138,6 +148,7 @@ export default {
   getProductsByFoodkeeperId,
   create,
   updateProductById,
+  updateProductQuantityById,
   removeAll,
   removeProductById,
   getProductList,

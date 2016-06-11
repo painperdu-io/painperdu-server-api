@@ -14,6 +14,8 @@ export default [
   { method: 'PUT', path: '/alliances/{allianceId}', config: Alliances.updateAllianceById },
   { method: 'PUT', path: '/alliances/{allianceId}/read/applicant', config: Alliances.updateAllianceReadApplicantById },
   { method: 'PUT', path: '/alliances/{allianceId}/read/giver', config: Alliances.updateAllianceReadGiverById },
+  { method: 'PUT', path: '/alliances/{allianceId}/applicant/accepted', config: Alliances.updateAllianceApplicantAcceptedById },
+
 
   // DELETE
   { method: 'DELETE', path: '/alliances', config: Alliances.removeAll },

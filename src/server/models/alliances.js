@@ -66,8 +66,13 @@ const AlliancesSchema = new Schema({
       type: Boolean,
       default: false,
     },
-    accepted: {
+    giver: {
       type: Boolean,
+      default: false,
+    },
+    applicant: {
+      type: Boolean,
+      default: false,
     },
     date: {
       type: String,

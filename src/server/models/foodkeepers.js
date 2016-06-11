@@ -9,7 +9,6 @@ const FoodkeepersSchema = new Schema({
   },
   description: {
     type: String,
-    required: true,
   },
   picture: {
     type: String,

@@ -123,9 +123,8 @@ const getProductsByMarketId = {
               .then((foodkeepersList) => {
                 // retourner les produits disponibles
                 Products.find({ foodkeepers: { $in: foodkeepersList } }) // liste de foodkeepers
-                  .then(products => {
-                    reply(ProductsController.getProductList(products));
-                  })
+                  .where('quantity').gt(0)
+                  .then(products => reply(ProductsController.getProductList(products)))
                   .catch(error => reply(Boom.badImplementation(error)));
               })
               .catch(err => console.log(err));

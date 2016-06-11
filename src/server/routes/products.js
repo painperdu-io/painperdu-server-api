@@ -11,6 +11,7 @@ export default [
 
   // PUT
   { method: 'PUT', path: '/products/{productId}', config: Products.updateProductById },
+  { method: 'PUT', path: '/products/{productId}/quantity', config: Products.updateProductQuantityById },
 
   // DELETE
   { method: 'DELETE', path: '/products', config: Products.removeAll },
