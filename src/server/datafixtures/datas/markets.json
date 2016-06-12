@@ -3,7 +3,7 @@
     {
       "_id": "575302fc5dacbac32540267b",
       "favorite": true,
-      "perimeter": 0,
+      "perimeter": 1,
       "foodkeeper": {
         "_id": "575c41279675c3f0bb344f70"
       }
@@ -11,7 +11,7 @@
     {
       "_id": "575302fc5dacbac32540267c",
       "favorite": false,
-      "perimeter": 2,
+      "perimeter": 3,
       "foodkeeper": {
         "_id": "575c41279675c3f0bb344f77"
       }
@@ -19,7 +19,7 @@
     {
       "_id": "575302fc5dacbac32540267d",
       "favorite": false,
-      "perimeter": 1,
+      "perimeter": 2,
       "foodkeeper": {
         "_id": "575c41279675c3f0bb344f71"
       }

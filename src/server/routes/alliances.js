@@ -6,6 +6,7 @@ export default [
   { method: 'GET', path: '/alliances/{allianceId}', config: Alliances.getAllianceById },
   { method: 'GET', path: '/alliances/user/{userId}', config: Alliances.getAlliancesByUserId },
   { method: 'GET', path: '/alliances/{allianceId}/user/{userId}', config: Alliances.getAllianceByIdWithUserId },
+  //{ method: 'GET', path: '/alliances/user/{userId}/notifications', config: Alliances.getAlliancesNotificationsByUserId },
 
   // POST
   { method: 'POST', path: '/alliances', config: Alliances.create },

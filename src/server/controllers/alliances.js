@@ -96,6 +96,18 @@ const getAllianceByIdWithUserId = {
   },
 };
 
+// GET: alliance notification by userid
+// const getAlliancesNotificationsByUserId = {
+//   handler: (request, reply) => {
+//     Alliances.find({ $or: [{'users.applicant': request.params.userId}, {'users.giver': request.params.userId}] })
+//       .select('users read status updatedAt')
+//       .where('status', 'terminated')
+//       .exec()
+//       .then(alliances => reply(alliances))
+//       .catch(error => reply(Boom.badImplementation(error)));
+//   },
+// };
+
 // POST: create a new alliance
 const create = {
   handler: (request, reply) => {
@@ -189,6 +201,7 @@ export default {
   getAllianceById,
   getAlliancesByUserId,
   getAllianceByIdWithUserId,
+  getAlliancesNotificationsByUserId,
   create,
   updateAllianceById,
   updateAllianceReadApplicantById,

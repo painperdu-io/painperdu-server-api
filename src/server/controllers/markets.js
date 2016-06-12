@@ -15,11 +15,11 @@ import Users from './../models/Users';
  */
 function getMaxDistance(perimeterId) {
   const EARTH_RADIUS = 6371;
-  if (perimeterId === 0) {
+  if (perimeterId === 1) {
     return 0.1 / EARTH_RADIUS; // 100m
-  } else if (perimeterId === 1) {
-    return 0.2 / EARTH_RADIUS; // 200m
   } else if (perimeterId === 2) {
+    return 0.2 / EARTH_RADIUS; // 200m
+  } else if (perimeterId === 3) {
     return 0.5 / EARTH_RADIUS; // 500m
   }
 }
