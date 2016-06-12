@@ -201,7 +201,7 @@ export default {
   getAllianceById,
   getAlliancesByUserId,
   getAllianceByIdWithUserId,
-  getAlliancesNotificationsByUserId,
+//  getAlliancesNotificationsByUserId,
   create,
   updateAllianceById,
   updateAllianceReadApplicantById,
