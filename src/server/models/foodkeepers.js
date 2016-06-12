@@ -12,7 +12,7 @@ const FoodkeepersSchema = new Schema({
   },
   picture: {
     type: String,
-    default: 'fiduralp.jpg',
+    default: 'http://192.168.175.2:5000/foodkeepers/fiduralp.jpg',
   },
   location: {
     street: {

@@ -7,6 +7,14 @@ const MarketsSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  blason: {
+    type: Number,
+    default: 1,
+  },
+  color: {
+    type: Number,
+    default: 1,
+  },
   perimeter: {
     type: Number,
     required: true,

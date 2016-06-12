@@ -76,6 +76,7 @@ const create = {
     product.type = request.payload.type;
     product.dlc = request.payload.dlc;
     product.quantity = request.payload.quantity;
+    product.author = request.payload.author;
     product.foodkeepers = request.payload.foodkeepers;
 
     // on sauvegarde les données

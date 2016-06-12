@@ -1,3 +1,5 @@
+import Products from './../models/Products';
+
 class ObjectsConnections {
 
   constructor(connectionId, io) {
@@ -9,27 +11,41 @@ class ObjectsConnections {
   setServer(socket) {
     this.server = socket;
 
-    this.server.on('button', (data) => {
-      console.log('button');
-      console.log(data);
-      if (data == 4) {
-        console.log('LED');
-        this.server.emit('led');
+    // buttons
+    this.server.on('button', data => {
+      console.log(`[ BUTTON ] :: ${data}`);
+    });
+
+    // potentiometer
+    this.server.on('button', data => {
+      console.log(`[ POTENTIOMETER ] :: ${data}`);
+    });
+
+    // RFID
+    this.server.on('rfid', data => {
+      console.log(`[ RFID ] :: ${data}`);
+
+      if (data === '0D00334BDDA8') {
+        // création du produit banane
+        const product = new Products();
+        product.icon = 'banane';
+        product.name = 'Bananes';
+        product.description = '';
+        product.type = 'raw';
+        product.dlc = 1;
+        product.quantity = 2;
+        product.author = '575c371b489e38aeb9cd4d24';
+        product.foodkeepers = '575c41279675c3f0bb344f70';
+
+        // on sauvegarde les données
+        product.save()
+          .then(() => console.log('Ajout produit: banane'))
+          .catch(error => console.log(error));
       }
     });
 
-    this.server.on('potentiometer', (data) => {
-      console.log('potentiometer');
-      console.log(data);
-    });
-
-    this.server.on('rfid', (data) => {
-      console.log('rfid');
-      console.log(data);
-    });
-
     this.server.on('accelerometer', () => {
-      console.log('accelerometer');
+      console.log('[ ACCELEROMETER ]');
     });
   }
 }

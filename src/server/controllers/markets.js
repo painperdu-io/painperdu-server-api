@@ -158,6 +158,8 @@ const create = {
     // création d'un foodkeeper
     const market = new Markets();
     market.perimeter = request.payload.perimeter;
+    market.color = request.payload.color;
+    market.blason = request.payload.blason;
     market.foodkeeper = request.payload.foodkeeper;
     market.userId = request.payload.userId;
 
