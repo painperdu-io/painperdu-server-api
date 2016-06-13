@@ -339,6 +339,40 @@
         "zipcode": 74960,
         "coordinates": [6.105255, 45.9062578]
       }
+    },
+    {
+      "_id": "575c41279675c3f0bb344f84",
+      "name": "Maison",
+      "description": "Mon petit chez moi",
+      "picture": "http://192.168.175.2:5000/foodkeepers/foodkeeper.jpg",
+      "location": {
+        "street": "12 rue Grenette",
+        "number": "",
+        "apartment": "",
+        "floor": "2",
+        "additional": "",
+        "infos": "",
+        "city": "Annecy",
+        "zipcode": 74000,
+        "coordinates": [6.1249267, 45.8989733]
+      }
+    },
+    {
+      "_id": "575c41279675c3f0bb344f85",
+      "name": "Maison",
+      "description": "Mon petit chez moi",
+      "picture": "http://192.168.175.2:5000/foodkeepers/foodkeeper.jpg",
+      "location": {
+        "street": "12 rue Grenette",
+        "number": "",
+        "apartment": "",
+        "floor": "2",
+        "additional": "",
+        "infos": "",
+        "city": "Annecy",
+        "zipcode": 74000,
+        "coordinates": [6.1249267, 45.8989733]
+      }
     }
   ]
 }

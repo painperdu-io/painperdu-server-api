@@ -9,9 +9,9 @@
       },
       "name": {
         "first": "Pierre",
-        "last": "Gramberd"
+        "last": "Grambairt"
       },
-      "email": "pierre.gramberd@gmail.com",
+      "email": "pierre.grambairt@gmail.com",
       "picture": "http://192.168.175.2:5000/users/pierre.jpg",
       "profile": {
         "gender": "male",
@@ -60,7 +60,7 @@
       },
       "name": {
         "first": "Mélanie",
-        "last": "Mélanie"
+        "last": "Durand"
       },
       "email": "melanie@painperdu.io",
       "picture": "http://192.168.175.2:5000/users/melanie.jpg",
@@ -512,6 +512,52 @@
       "score": 61,
       "foodkeepers": [
         { "_id": "575c41279675c3f0bb344f83" }
+      ]
+    },
+    {
+      "_id": "575c371b489e38aeb9cd4d40",
+      "login": {
+        "username": "solene",
+        "password": "ED970E6FB9FFEA8E62CFCDF3219179C98309645E2423B5DCEF552C6EAB1ADECF",
+        "salt": "YgGDiN9z"
+      },
+      "name": {
+        "first": "Solene",
+        "last": "Solene"
+      },
+      "email": "solene@painperdu.io",
+      "picture": "http://192.168.175.2:5000/users/solene.jpg",
+      "profile": {
+        "gender": "female",
+        "birthday": "",
+        "description": ""
+      },
+      "score": 27,
+      "foodkeepers": [
+        { "_id": "575c41279675c3f0bb344f84" }
+      ]
+    },
+    {
+      "_id": "575c371b489e38aeb9cd4d41",
+      "login": {
+        "username": "etienne",
+        "password": "ED970E6FB9FFEA8E62CFCDF3219179C98309645E2423B5DCEF552C6EAB1ADECF",
+        "salt": "YgGDiN9z"
+      },
+      "name": {
+        "first": "Etienne",
+        "last": "Etienne"
+      },
+      "email": "etienne@painperdu.io",
+      "picture": "http://192.168.175.2:5000/users/etienne.jpg",
+      "profile": {
+        "gender": "male",
+        "birthday": "",
+        "description": "Je viens d’arriver dans l’immeuble et mon frigo souffre souvent de solitude... Au plaisir de rencontrer mes nouveaux voisins !"
+      },
+      "score": 2,
+      "foodkeepers": [
+        { "_id": "575c41279675c3f0bb344f85" }
       ]
     }
   ]
